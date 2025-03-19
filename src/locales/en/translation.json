@@ -1,0 +1,470 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About Us",
+      "destination": "Destinations",
+      "service": "Services",
+      "products": "Products",
+      "contact": "Contact Us",
+      "login": "Login",
+      "signup": "Sign Up",
+      "profile": "Profile",
+      "myBooking": "My Booking",
+      "logout": "Logout"
+    },
+    "language": {
+      "english": "Eng",
+      "kinyarwanda": "Kiny"
+    },
+    "hero": {
+    "title": "OldFox-Tour: Your Journey to Spiritual and Cultural Discovery",
+    "explore": "Explore here",
+    "searchPlaceholder": "Search Trip here ...",
+    "upcomingTrip": "Upcoming Trips",
+    "internationalTour": "International Tours",
+    "internationalTourDesc": "OldFox guides you through global spiritual landmarks",
+    "religionTour": "Religious Tours",
+    "religionTourDesc": "Explore sacred sites with OldFox's expert knowledge",
+    "localTour": "Local Tours",
+    "localTourDesc": "Explore the spiritual and tourism treasures of your region with OldFox.",
+    
+    "searchLabel": "Search for a trip",
+    "noDestinationsFound": "No destinations found for \"{{searchTerm}}\"",
+   
+    "loading": "Loading..."
+    
+
+  },
+  "trips": {
+    "tripToBali": "Trip to Bali",
+    "exploreIceland": "Explore Iceland",
+    "adventureInMorocco": "Adventure in Morocco"
+  },
+  "whyChooseUs": {
+    "title": "WHY CHOOSE US?",
+    "description": "A brand name you can trust and rely on",
+    "benefits": {
+      "affordablePrice": "Affordable price Guarantee",
+      "varietyOfDestinations": "Wide variety of destinations",
+      "highQualityService": "High qualified service"
+    }
+  },
+  "popularTourPackages": {
+    "title": "Popular Tour Packages",
+    "altText": "Image of the popular tour package number {{index}}",
+    "name": " Local Tour",
+    "rwandaLocalTour": "Rwanda Local Tour",
+    "abroadTour": "Abroad Tour",
+    "rwandaLocation": "Rwanda",
+    "abroadLocation": "Israel, Turkey, Italy,....",
+    "localTourType": "Local Tour",
+    "internationalTourType": "International Tour",
+    "backToTours": "Back to Tours",
+    "scenicViewOf": "Scenic view of {{name}}",
+    "galleryImages": "Gallery Images"
+
+  },
+  "howItWorks": {
+    "title": "How it works?",
+    "subtitle": "Search, select, book",
+    "steps": {
+      "search": {
+        "title": "Search",
+        "description": "Find your Dream trip"
+      },
+      "select": {
+        "title": "Select",
+        "description": "Select trip packages"
+      },
+      "book": {
+        "title": "Book",
+        "description": "Booking and pay"
+      }
+    }
+  },
+  "footer": {
+    "description": "Discover the world with Exodus: Your trusted travel",
+    "decriptionn":"adventure partner!",
+    "topDestinations": "Top destinations",
+    "contactInfo": "Contact info",
+    "address": "Address: Remera Gisimenti(Ikaze House)",
+    "phone": "Phone: 0788726181",
+    "email": "Email: Oldfoxcoltd@gmail.com",
+    "copyright": "©{{year}} Exodus. All rights reserved."
+  },
+  "destinations": {
+    "rwanda": "Rwanda",
+    "israel": "Israel",
+    "turkey": "Turkey",
+    "egypt": "Egypt"
+
+  },
+  "about": {
+    "header": "About Us",
+    "subheader":"What we do",
+    "quote1": "OLD Fox Company offers expertly planned religious trips, guiding individuals and groups to some of the most sacred destinations worldwide. Our pilgrimages are designed to inspire spiritual growth, combining prayer, reflection, and cultural exploration. Whether visiting ancient temples or holy cities, each trip provides a meaningful opportunity for travelers to connect deeply with their faith and traditions. We ensure every journey is thoughtfully organized for a seamless and enriching experience.",
+    "quote2": "Our itineraries create transformative experiences, blending spiritual enrichment with cultural immersion. Travelers explore significant religious landmarks, engage with local traditions, and connect with fellow believers. These journeys inspire renewal and reflection, offering a deeper understanding of faith and lasting memories in some of the world's most revered spiritual places.",
+    "team": "Our Team",
+    "boss":"CEO of Oldfox"
+  },
+  "destiny": {
+    "backgroundAlt": "A beautiful scenic background",
+    "title": "DESTINATIONS",
+    "explore": "Our Destination",
+    "discover": "Discover",
+    "book":"BooK Now",
+    "destinations": {
+      "rwanda": "Rwanda",
+      "rwandaDescription": "Discover Rwanda's religious heritage, blending culture and spirituality.",
+      "israel": "Israel",
+      "israelDescription": "Experience Israel's rich spiritual heritage and holy landmarks.",
+      "turkey": "Turkey",
+      "turkeyDescription": "Experience Turkey's sacred sites, a crossroads of ancient faiths.",
+      "egypt": "Egypt",
+      "egyptDescription":"Experience Egypt's timeless spiritual wonders and ancient temples."
+    }
+  },
+  "service": {
+    "title": "Service",
+    "subtitle": "Our Services We Provide",
+    "our_services": "Our services",
+    "join_adventures": "Join the adventures",
+    "with_stories": "with stories",
+    "description": "Explore diverse religious landmarks and spiritual experiences, showcasing rich cultural heritage and traditions. Visit sacred temples, historic churches, and peaceful monasteries, each holding stories of ancient rituals and deep devotion. Experience local festivals and spiritual practices that bring communities together, offering a unique glimpse into humanity's shared journey of faith and connection.",
+    "custom_destinations": "Custom destinations",
+    "unforgettable_moments": "Unforgettable Moments",
+    "competitive_pricing": "Competitive pricing",
+    "self_guide": "Self guide",
+    "available": "24/7 Available",
+    "transportations": "Transportations",
+    "Whychooseus": "Why choose us",
+    "whyDecription":"A brand name you can trust and rely on",
+    "benefits": {
+      "affordablePrice": "Affordable price Guarantee",
+      "varietyOfDestinations": "Wide variety of destinations",
+      "highQualityService": "High qualified service"
+    }
+  },
+  "products":{
+    "title":"Product",
+    "subtitle":"Historical Products",
+    "discription":"Visit our office to buy high-quality religious products in person",
+    "accountinfo":"ACCOUNT INFORMATION",
+    "account":"ACCOUNT NUMBER",
+    "phone":"PHONE NUMBER"
+
+  },
+  "contact": {
+    "header": "Contact",
+    "contactus":"Contact Us",
+    "get_in_touch": "Get in touch with us",
+    "phone": "Phone",
+    "address": "Address",
+    "email": "Email",
+    "phone_number": "+250788726181",
+    "address_content": "Remera Gisimenti(Ikaze House)",
+    "email_content": "Oldfoxcoltd@gmail.com",
+    "question_message": "IF YOU GOT ANY QUESTION PLEASE DO NOT HESITATE TO SEND US MESSAGE.",
+    "your_names": "Your names",
+    "your_email": "Your email",
+    "subject": "Subject",
+    "message": "Message",
+    "send_message": "SEND MESSAGE"
+  },
+  "login": {
+    "title": "LOGIN",
+    "subtitle": "Log into your account",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login",
+    "loading": "Logging in...",
+    "success": "Login successful!",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "signup": {
+    "register": "REGISTER",
+    "createAccount": "Create your account",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "uploadPhoto": "Upload Photo",
+    "registering": "Registering...",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "signupSuccessful": "Signup successful!"
+  },
+  "tour":{
+    "title":"Find a tour by destination"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password?",
+    "intro": "Don't worry. We can help.",
+    "instruction": "Please fill in your email address",
+    "placeholder": "Enter your email",
+    "continueButton": "Continue",
+    "loading": "Sending...",
+    "statusSuccess": "Password reset link sent!",
+    "errorMessage": "An error occurred. Please try again."
+  },
+  
+    "title": "My Bookings",
+    "tabs": {
+      "all": "All",
+      "approved": "Approved",
+      "pending": "Pending",
+      "canceled": "Canceled"
+    },
+    "headings": {
+      "all_bookings": "All Bookings",
+      "approved_bookings": "Approved Bookings",
+      "pending_bookings": "Pending Bookings",
+      "canceled_bookings": "Canceled Bookings"
+    },
+    "labels": {
+      "date": "Date",
+      "guests": "Guests",
+      "total": "Total",
+      "no_bookings": "No bookings found."
+    },
+    "profile": {
+      "title": "User Profile Dashboard",
+      "personalInfo": "Personal Information",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "saveChanges": "Save Changes",
+      "uploadNewAvatar": "Upload new avatar",
+      "clickToUpload": "Click on the image to upload a new profile photo",
+      "likedDestinations": "Liked Destinations",
+      "likedDestinationsDescription": "These are the destinations you've liked. They will be displayed on the home page.",
+      "accountSettings": "Account Settings",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "changePassword": "Change Password",
+      "supportContact": "Support & Contact",
+      "supportDescription": "If you're experiencing issues or have questions, please don't hesitate to reach out to our support team.",
+      "supportEmail": "Email",
+      "supportPhone": "Phone",
+      "message": "Message",
+      "describeProblem": "Describe your issue or question",
+      "submitRequest": "Submit Request",
+      "preferences": "Preferences",
+      "support": "Support",
+      "newDestinationTutor": "New! Click to learn more about this destination.",
+      "destinations": {
+        "rwanda": {
+          "name": "Rwanda",
+          "description": "Experience the beauty and culture of the Land of a Thousand Hills."
+        },
+        "turkey": {
+          "name": "Turkey",
+          "description": "Immerse yourself in the vibrant culture of Turkey's capital."
+        },
+        "israel": {
+          "name": "Israel",
+          "description": "Explore the rich history and diverse landscapes of the Holy Land."
+        }
+      }
+    },
+    "tours": {
+    "internationalTour": "OldFox guides you through global spiritual landmarks",
+    "religionTour": "Explore sacred sites with OldFox's expert knowledge",
+    "localTour": "Discover hidden spiritual gems in your area with OldFox"
+  },
+
+  "destini": {
+    "title": "Destinations",
+    "subtitle": "Explore more destinations",
+    "backgroundAlt": "Background image of destinations",
+    "religiousSignificance": "Religious Significance",
+    "sacredActivities": "Sacred Activities",
+    "planPilgrimage": "Plan Pilgrimage",
+    "book":"BooK Now"
+  },
+  "countries": {
+    "Rwanda": "Rwanda",
+    "Israel": "Israel",
+    "Egypt": "Egypt",
+    "Turkey": "Turkey"
+  },
+  "destinationTypes": {
+    "CatholicShrine": "Catholic Shrine",
+    "CatholicCathedral": "Catholic Cathedral",
+    "ReligiousInstitution": "Religious Institution",
+    "JewishHolySite": "Jewish Holy Site",
+    "ChristianHolySite": "Christian Holy Site",
+    "IslamicHolySite": "Islamic Holy Site",
+    "BahaiHolySite": "Bahá'í Holy Site",
+    "MultiFaithSite": "Multi-Faith Site",
+    "AncientWonder": "Ancient Wonder",
+    "AncientTemple": "Ancient Temple",
+    "ChristianMonastery": "Christian Monastery",
+    "MuseumMosque": "Museum/Mosque",
+    "AncientCity": "Ancient City",
+    "NaturalWonder": "Natural Wonder"
+  },
+  "destination": {
+    "KibehoHolyLand": {
+      "name": "Kibeho Holy Land",
+      "description": "Known for the Marian apparitions of Our Lady of Kibeho, this is the only Vatican-approved apparition site in Africa.",
+      "significance": "Major Catholic pilgrimage site where the Virgin Mary appeared to three young women in the 1980s",
+      "activities": {
+        "0": "Daily Mass",
+        "1": "Rosary Processions",
+        "2": "Spiritual Retreats",
+        "3": "Healing Prayers"
+      }
+    },
+    "ReginaPacisCathedral": {
+      "name": "Regina Pacis Cathedral",
+      "description": "The main Catholic cathedral in Kigali, showcasing modern African Christian architecture.",
+      "significance": "Center of Catholic worship in Rwanda's capital",
+      "activities": {
+        "0": "Sunday Mass",
+        "1": "Cultural Programs",
+        "2": "Religious Education",
+        "3": "Community Services"
+      }
+    },
+    "NyakibandaSeminary": {
+      "name": "Nyakibanda Seminary",
+      "description": "One of the oldest and largest seminaries in Rwanda, training priests since 1936.",
+      "significance": "Historical center for religious education and formation",
+      "activities": {
+        "0": "Guided Tours",
+        "1": "Religious Studies",
+        "2": "Historical Exhibits",
+        "3": "Prayer Sessions"
+      }
+    },
+    "WesternWall": {
+      "name": "Western Wall",
+      "description": "The most sacred site in Judaism, part of the ancient Temple Mount complex.",
+      "significance": "Last remaining wall of the Second Temple of Jerusalem",
+      "activities": {
+        "0": "Prayer Services",
+        "1": "Bar Mitzvah Ceremonies",
+        "2": "Tunnel Tours",
+        "3": "Shabbat Experience"
+      }
+    },
+    "ChurchOfTheHolySepulchre": {
+      "name": "Church of the Holy Sepulchre",
+      "description": "Traditional site of Jesus's crucifixion, burial, and resurrection.",
+      "significance": "Most important pilgrimage site for many Christian denominations",
+      "activities": {
+        "0": "Daily Mass",
+        "1": "Guided Tours",
+        "2": "Prayer Vigils",
+        "3": "Religious Ceremonies"
+      }
+    },
+    "AlAqsaMosque": {
+      "name": "Al-Aqsa Mosque",
+      "description": "The third-holiest site in Islam, located on the Temple Mount.",
+      "significance": "Major Islamic pilgrimage destination",
+      "activities": {
+        "0": "Daily Prayers",
+        "1": "Islamic Studies",
+        "2": "Historical Tours",
+        "3": "Cultural Programs"
+      }
+    },
+    "BahaiGardens": {
+      "name": "Bahá'í Gardens",
+      "description": "Terraced gardens surrounding the Shrine of the Báb in Haifa.",
+      "significance": "World Center of the Bahá'í Faith",
+      "activities": {
+        "0": "Guided Tours",
+        "1": "Meditation",
+        "2": "Photography",
+        "3": "Cultural Learning"
+      }
+    },
+    "SeaOfGalilee": {
+      "name": "Sea of Galilee",
+      "description": "Freshwater lake associated with many events in Jesus's life.",
+      "significance": "Important site for Christian pilgrims and nature lovers",
+      "activities": {
+        "0": "Boat Tours",
+        "1": "Biblical Site Visits",
+        "2": "Baptism Ceremonies",
+        "3": "Nature Walks"
+      }
+    },
+    "GreatPyramidOfGiza": {
+      "name": "Great Pyramid of Giza",
+      "description": "One of the Seven Wonders of the Ancient World, built as a tomb for the Pharaoh Khufu.",
+      "significance": "Symbol of ancient Egyptian civilization and engineering marvel",
+      "activities": {
+        "0": "Guided Tours",
+        "1": "Camel Rides",
+        "2": "Sunset Viewing",
+        "3": "Archaeological Lectures"
+      }
+    },
+    "LuxorTemple": {
+      "name": "Luxor Temple",
+      "description": "A large Ancient Egyptian temple complex located on the east bank of the Nile River.",
+      "significance": "Important site for ancient Egyptian religion and history",
+      "activities": {
+        "0": "Night Tours",
+        "1": "Hieroglyphic Workshops",
+        "2": "Sound and Light Shows",
+        "3": "Nile Cruises"
+      }
+    },
+    "SaintCatherinesMonastery": {
+      "name": "Saint Catherine's Monastery",
+      "description": "One of the oldest working Christian monasteries in the world.",
+      "significance": "Important site for Orthodox Christianity and home to valuable manuscripts",
+      "activities": {
+        "0": "Guided Tours",
+        "1": "Icon Viewing",
+        "2": "Sunrise Hikes",
+        "3": "Meditation Sessions"
+      }
+    },
+    "HagiaSophia": {
+      "name": "Hagia Sophia",
+      "description": "Former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque, now a museum.",
+      "significance": "Architectural marvel and symbol of Istanbul's diverse history",
+      "activities": {
+        "0": "Guided Tours",
+        "1": "Art Appreciation",
+        "2": "Historical Lectures",
+        "3": "Photography Sessions"
+      }
+    },
+    "Ephesus": {
+      "name": "Ephesus",
+      "description": "An ancient Greek city on the coast of Ionia, famous for the Temple of Artemis.",
+      "significance": "One of the best-preserved ancient cities in the Mediterranean",
+      "activities": {
+        "0": "Archaeological Tours",
+        "1": "Historical Reenactments",
+        "2": "Night Walks",
+        "3": "Photography Workshops"
+      }
+    },
+    "Cappadocia": {
+      "name": "Cappadocia",
+      "description": "A region known for its distinctive 'fairy chimneys,' formed by volcanic rock formations.",
+      "significance": "Unique landscape and early Christian history",
+      "activities": {
+        "0": "Hot Air Balloon Rides",
+        "1": "Underground City Tours",
+        "2": "Rock Church Visits",
+        "3": "Hiking"
+      }
+    }
+  }
+  
+  
+
+  
+  }
+  
