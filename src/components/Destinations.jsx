@@ -1,21 +1,27 @@
-import { useState, useEffect } from "react";
-import { FaHeart, FaDollarSign, FaGlobe, FaComment } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+"use client"
+
+import { useState, useEffect } from "react"
+import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 function Destinations() {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS animations
-    AOS.refresh(); // Refresh animations
-  }, []);
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      anchorPlacement: "top-bottom",
+    })
+    AOS.refresh()
+  }, [])
 
   const destinations = [
     {
       name: "Istanbul",
       country: "Turkey",
-      price: "120",
-      likes: 0,
+      description: "Experience the magic where East meets West",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/d8efb44e43706d2ab842fdd19c2244025c01c5b8fad3492a380746506e88fc7c?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
       link: "/TurkeyDetails",
@@ -23,8 +29,7 @@ function Destinations() {
     {
       name: "Kibeho",
       country: "Rwanda",
-      price: "120",
-      likes: 0,
+      description: "Discover the natural beauty of the land of a thousand hills",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/ac109e70ddda2f99596b7c5e3d028a6ecd87d15434bcbc75fd434ab0f43f2d2e?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
       link: "/RwandaDetails",
@@ -32,98 +37,108 @@ function Destinations() {
     {
       name: "Cairo",
       country: "Egypt",
-      price: "120",
-      likes: 0,
+      description: "Walk in the footsteps of pharaohs and ancient civilizations",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/aa2915a0b34429f473d79e69bdfa330c9faf55d12ff59b9dddbaf71385e7f9fb?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
       link: "/EgyptDetails",
     },
     {
       name: "Jerusalem",
-      country: "Telaviv",
-      price: "120",
-      likes: 0,
+      country: "Israel",
+      description: "Journey through the sacred sites of the Holy Land",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/e31f819637328b0b24a419f37c97a6b26a48dd194e979979d0ece2a75bb68d20?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
       link: "/JerusalemDetails",
     },
-  ];
+  ]
 
   return (
-    <section className="container mx-auto px-4 md:px-12 lg:px-20 py-10" data-aos="fade-up">
-      <div className="flex flex-wrap justify-center gap-8">
-        {destinations.map((destination, index) => (
-          <DestinationCard key={index} {...destination} />
-        ))}
+    <section className="py-16 bg-gradient-to-b from-white bg-shadow">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl md:text-4xl font-[jim-nightshade] text-center mb-1" data-aos="fade-down">
+          Places to visit
+        </h2>
+        <p className="text-gray-600 text-center max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+          Explore our handpicked destinations for unforgettable journeys and spiritual experiences
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {destinations.map((destination, index) => (
+            <DestinationCard key={index} {...destination} index={index} />
+          ))}
+        </div>
       </div>
     </section>
-  );
+  )
 }
 
-function DestinationCard({ name, country, price, likes, image, link }) {
-  const [likeCount, setLikeCount] = useState(likes);
-  const [isLiked, setIsLiked] = useState(false);
+function DestinationCard({ name, country, description, image, link, index }) {
+  const [isHovered, setIsHovered] = useState(false)
 
-  const handleLikeClick = () => {
-    if (isLiked) {
-      setLikeCount(likeCount - 1);
-    } else {
-      setLikeCount(likeCount + 1);
-    }
-    setIsLiked(!isLiked);
-  };
+  const animationDelay = index * 100
 
   return (
-    <article
-      className="flex flex-col w-full sm:w-2/3 md:w-2/3 lg:w-2/3 xl:w-1/3 p-4"
-      data-aos="zoom-in" // Animation for the entire card
-    >
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105 duration-300">
-        <img
-          src={image}
-          alt={`${name} destination`}
-          className="w-full h-64 object-cover"
-          loading="lazy"
-        />
-        <div className="p-5">
-          <h3 className="text-2xl font-semibold mb-2">{name}</h3>
-          <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
-            <div className="flex items-center">
-              <FaGlobe className="w-4 h-4 mr-2" />
-              <span>{country}</span>
-            </div>
-            {/* <div className="flex items-center">
-              <FaDollarSign className="w-4 h-4 mr-2" />
-              <span>{price}$</span>
-            </div> */}
-            <div className="flex items-center">
-              <FaHeart
-                className={`w-5 h-5 mr-1 cursor-pointer ${
-                  isLiked ? "text-red-500 scale-125 transition-transform duration-200" : "text-gray-500"
-                }`}
-                onClick={handleLikeClick}
-              />
-              <span>{likeCount} Likes</span>
-            </div>
+    <article className="h-full" data-aos="fade-up" data-aos-delay={animationDelay} data-aos-duration="800">
+      <div
+        className="relative h-full rounded-xl overflow-hidden shadow-lg group"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Background Image with Parallax Effect */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out ${isHovered ? "scale-110" : "scale-100"}`}
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+
+        {/* Content Container */}
+        <div className="relative h-[400px] p-6 flex flex-col justify-end z-10 transition-all duration-500">
+          {/* Location Badge */}
+          <div
+            className="flex items-center bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full w-fit mb-3 transform translate-y-0 opacity-100 group-hover:translate-y-0 transition-all duration-500"
+            data-aos="fade-right"
+            data-aos-delay={animationDelay + 200}
+          >
+            <FaMapMarkerAlt className="mr-1 text-sm" />
+            <span className="text-sm font-medium">{country}</span>
           </div>
 
-          <div className="text-xs flex justify-between items-center gap-2 text-gray-500 mt-2">
-            <div className="flex items-center">
-              <FaComment className="w-4 h-4 mr-2" />
-              <span className="text-sm mr-6">View all 9 Comments</span>
-            </div>
-            <div className="flex justify-end">
-              {/* <Link to={link}>
-                <button className="ml-5 px-1 py-2 text-xs text-sky-500 border border-sky-500 rounded-full hover:bg-sky-500 hover:text-white transition-colors">
-                  View Details
-                </button>
-              </Link> */}
-            </div>
-          </div>
+          {/* Destination Name */}
+          <h3
+            className="text-2xl font-bold text-white mb-2 transform group-hover:translate-y-0 transition-all duration-500"
+            data-aos="fade-up"
+            data-aos-delay={animationDelay + 300}
+          >
+            {name}
+          </h3>
+
+          {/* Description - Hidden by default, shown on hover */}
+          <p
+            className={`text-white/90 mb-6 transform transition-all duration-500 ${
+              isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            {description}
+          </p>
+
+          {/* Explore Button */}
+          <Link to={link} className="group/button">
+            <button
+              className={`flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-medium py-3 px-6 rounded-lg transform transition-all duration-500 ${
+                isHovered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}
+            >
+              <span>Explore More</span>
+              <FaArrowRight className="transform group-hover/button:translate-x-1 transition-transform duration-300" />
+            </button>
+          </Link>
         </div>
       </div>
     </article>
-  );
+  )
 }
 
-export default Destinations;
+export default Destinations
+
