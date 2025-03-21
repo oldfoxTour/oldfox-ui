@@ -15,6 +15,58 @@
     "language": {
       "english": "Eng",
       "kinyarwanda": "Kiny"
+    }, "about": {
+      "header": "About Us",
+      "subheader": "What we do",
+      "tagline": "Discover spiritual destinations with us",
+      "backgroundAlt": "Background image of spiritual destinations",
+      "storyTitle": "Our Story",
+      "storyPart1": "Founded in 2010, Sacred Journeys began with a simple yet profound mission: to connect people with the world's most spiritually significant places. Our founder, Sarah Johnson, was inspired by her own transformative experiences at various religious sites around the globe.",
+      "storyPart2": "What started as a small operation offering guided tours to local pilgrimage sites has now grown into a respected name in religious tourism, serving thousands of spiritual seekers each year.",
+      "quote1": "Embark on a journey of spiritual discovery and cultural immersion with Sacred Journeys.",
+      "quote2": "Experience the profound beauty and spiritual significance of sacred sites around the world.",
+      "religiousDestinationAlt": "Religious destination",
+      "religiousLandmarkAlt": "Religious landmark",
+      "whyChooseUsTitle": "Why Choose Sacred Journeys?",
+      "features": {
+        "expertGuides": {
+          "title": "Expert Guides",
+          "description": "Our guides are not just tour leaders, but scholars in religious studies and local cultures."
+        },
+        "respectfulApproach": {
+          "title": "Respectful Approach",
+          "description": "We ensure all our tours are conducted with the utmost respect for local customs and beliefs."
+        },
+        "immersiveExperiences": {
+          "title": "Immersive Experiences",
+          "description": "Go beyond sightseeing with opportunities for meditation, prayer, and spiritual practices."
+        },
+        "diverseDestinations": {
+          "title": "Diverse Destinations",
+          "description": "From ancient temples to modern pilgrimage sites, we cover a wide range of spiritual locations."
+        },
+        "smallGroups": {
+          "title": "Small Groups",
+          "description": "We keep our groups small to ensure a more personal and meaningful experience."
+        },
+        "sustainableTourism": {
+          "title": "Sustainable Tourism",
+          "description": "We're committed to minimizing our environmental impact and supporting local communities."
+        }
+      },
+      "impactTitle": "Our Impact",
+      "impact": {
+        "pilgrims": "Pilgrims Guided",
+        "sites": "Sacred Sites Visited",
+        "countries": "Countries Explored"
+      },
+      "team": "Meet Our Team",
+      "boss": "Founder & CEO",
+      "operations": "Head of Operations",
+      "expert": "Religious Studies Expert",
+      "ctaTitle": "Ready to Begin Your Sacred Journey?",
+      "ctaDescription": "Join us on a transformative adventure to the world's most revered spiritual destinations.",
+      "ctaButton": "Explore Our Tours"
     },
     "hero": {
     "title": "OldFox-Tour: Your Journey to Spiritual and Cultural Discovery",
@@ -98,15 +150,141 @@
     "turkey": "Turkey",
     "egypt": "Egypt"
 
+  },"service": {
+  "title": "Service",
+  "subtitle": "Our Services We Provide",
+  "heroBackgroundAlt": "Services background image",
+  "serviceIllustrationAlt": "Service illustration",
+  "our_services": "Our services",
+  "join_adventures": "Join the adventures",
+  "with_stories": "with stories",
+  "description": "Explore diverse religious landmarks and spiritual experiences, showcasing rich cultural heritage and traditions. Visit sacred temples, historic churches, and peaceful monasteries, each holding stories of ancient rituals and deep devotion. Experience local festivals and spiritual practices that bring communities together, offering a unique glimpse into humanity's shared journey of faith and connection.",
+  "custom_destinations": "Custom destinations",
+  "unforgettable_moments": "Unforgettable Moments",
+  "competitive_pricing": "Competitive pricing",
+  "self_guide": "Self guide",
+  "available": "24/7 Available",
+  "transportations": "Transportations",
+  "Whychooseus": "Why choose us",
+  "whyDecription": "A brand name you can trust and rely on",
+  "whyChooseUsBackgroundAlt": "Why choose us background image",
+  "benefits": {
+    "affordablePrice": "Affordable price Guarantee",
+    "varietyOfDestinations": "Wide variety of destinations",
+    "highQualityService": "High qualified service",
+    "affordablePriceAlt": "Affordable price guarantee icon",
+    "varietyOfDestinationsAlt": "Wide variety of destinations icon",
+    "highQualityServiceAlt": "High qualified service icon",
+    "spiritualGrowth": {
+      "title": "Spiritual Growth",
+      "description": "Our services are designed to foster deep spiritual connections and personal growth, helping you on your journey of self-discovery and enlightenment."
+    },
+    "culturalImmersion": {
+      "title": "Cultural Immersion",
+      "description": "Experience the rich tapestry of world religions and cultures firsthand, broadening your perspective and understanding of diverse spiritual practices."
+    },
+    "expertGuidance": {
+      "title": "Expert Guidance",
+      "description": "Benefit from the knowledge and insights of our experienced spiritual guides and local experts who provide context and deeper understanding of sacred sites and practices."
+    },
+    "stressRelief": {
+      "title": "Stress Relief",
+      "description": "Our retreats and meditation services offer a respite from daily stresses, promoting relaxation, mindfulness, and overall well-being."
+    },
+    "communityConnection": {
+      "title": "Community Connection",
+      "description": "Join a community of like-minded individuals on similar spiritual journeys, fostering meaningful connections and shared experiences."
+    },
+    "personalizedExperiences": {
+      "title": "Personalized Experiences",
+      "description": "We tailor our services to meet your individual spiritual needs and preferences, ensuring a deeply personal and transformative experience."
+    }
   },
-  "about": {
-    "header": "About Us",
-    "subheader":"What we do",
-    "quote1": "OLD Fox Company offers expertly planned religious trips, guiding individuals and groups to some of the most sacred destinations worldwide. Our pilgrimages are designed to inspire spiritual growth, combining prayer, reflection, and cultural exploration. Whether visiting ancient temples or holy cities, each trip provides a meaningful opportunity for travelers to connect deeply with their faith and traditions. We ensure every journey is thoughtfully organized for a seamless and enriching experience.",
-    "quote2": "Our itineraries create transformative experiences, blending spiritual enrichment with cultural immersion. Travelers explore significant religious landmarks, engage with local traditions, and connect with fellow believers. These journeys inspire renewal and reflection, offering a deeper understanding of faith and lasting memories in some of the world's most revered spiritual places.",
-    "team": "Our Team",
-    "boss":"CEO of Oldfox"
+  "featuredServicesTitle": "Featured Services: Spiritual Journeys",
+  "featuredServices": {
+    "virtualPilgrimage": {
+      "title": "Virtual Pilgrimage",
+      "description": "Experience sacred sites from the comfort of your home with our innovative VR technology."
+    },
+    "meditationRetreats": {
+      "title": "Guided Meditation Retreats",
+      "description": "Join our expert-led meditation retreats in serene locations for inner peace and spiritual growth."
+    },
+    "heritageTours": {
+      "title": "Religious Heritage Tours",
+      "description": "Explore the rich religious heritage of various cultures with our carefully curated tours."
+    }
   },
+  "innovation": {
+    "title": "Innovation in Religious Tourism",
+    "subtitle": "Embracing Technology for Spiritual Journeys",
+    "description": "We're at the forefront of integrating cutting-edge technology with traditional religious tourism. Our innovative approaches include:",
+    "imageAlt": "Innovative Religious Tourism",
+    "items": {
+      "item1": "Augmented Reality (AR) guided tours of religious sites",
+      "item2": "AI-powered personalized spiritual journey planning",
+      "item3": "Blockchain-based donation systems for religious institutions",
+      "item4": "Virtual reality meditation and prayer rooms"
+    }
+  },
+  "process": {
+    "title": "Our Service Process",
+    "step1": {
+      "title": "Consultation",
+      "description": "Discuss your spiritual goals and preferences"
+    },
+    "step2": {
+      "title": "Customization",
+      "description": "Tailor your journey to your specific needs"
+    },
+    "step3": {
+      "title": "Preparation",
+      "description": "Receive guidance on spiritual and practical preparation"
+    },
+    "step4": {
+      "title": "Experience",
+      "description": "Embark on your transformative spiritual journey"
+    },
+    "step5": {
+      "title": "Reflection",
+      "description": "Post-journey support and reflection sessions"
+    }
+  },
+  "testimonials": {
+    "testimonial1": {
+      "quote": "The Virtual Pilgrimage service offered by this company is truly revolutionary. It allowed me to connect with holy sites I never thought I'd be able to visit. The experience was deeply moving and spiritually enriching.",
+      "name": "Sarah Thompson",
+      "title": "Virtual Pilgrimage Participant"
+    },
+    "testimonial2": {
+      "quote": "Their Guided Meditation Retreats have transformed my spiritual practice. The serene locations and expert guidance provided an unforgettable experience of inner peace.",
+      "name": "Michael Chen",
+      "title": "Meditation Retreat Attendee"
+    },
+    "testimonial3": {
+      "quote": "The Religious Heritage Tour was an eye-opening journey through different cultures and faiths. It broadened my perspective and deepened my appreciation for world religions.",
+      "name": "Amira Hassan",
+      "title": "Heritage Tour Participant"
+    }
+  },
+  "benefitsSection": {
+    "title": "Benefits of Our Services"
+  },
+  "uniqueApproach": {
+    "title": "Our Unique Approach to Religious Tourism",
+    "subtitle": "Blending Tradition with Innovation",
+    "description": "Our approach to religious tourism is rooted in respect for tradition while embracing modern innovations. We strive to:",
+    "imageAlt": "Our Unique Approach",
+    "items": {
+      "item1": "Preserve and promote authentic spiritual experiences",
+      "item2": "Utilize technology to enhance accessibility and understanding",
+      "item3": "Foster interfaith dialogue and mutual respect",
+      "item4": "Prioritize sustainable and responsible tourism practices",
+      "item5": "Provide comprehensive support before, during, and after your journey"
+    }
+  }
+},
+
   "destiny": {
     "backgroundAlt": "A beautiful scenic background",
     "title": "DESTINATIONS",
@@ -124,27 +302,7 @@
       "egyptDescription":"Experience Egypt's timeless spiritual wonders and ancient temples."
     }
   },
-  "service": {
-    "title": "Service",
-    "subtitle": "Our Services We Provide",
-    "our_services": "Our services",
-    "join_adventures": "Join the adventures",
-    "with_stories": "with stories",
-    "description": "Explore diverse religious landmarks and spiritual experiences, showcasing rich cultural heritage and traditions. Visit sacred temples, historic churches, and peaceful monasteries, each holding stories of ancient rituals and deep devotion. Experience local festivals and spiritual practices that bring communities together, offering a unique glimpse into humanity's shared journey of faith and connection.",
-    "custom_destinations": "Custom destinations",
-    "unforgettable_moments": "Unforgettable Moments",
-    "competitive_pricing": "Competitive pricing",
-    "self_guide": "Self guide",
-    "available": "24/7 Available",
-    "transportations": "Transportations",
-    "Whychooseus": "Why choose us",
-    "whyDecription":"A brand name you can trust and rely on",
-    "benefits": {
-      "affordablePrice": "Affordable price Guarantee",
-      "varietyOfDestinations": "Wide variety of destinations",
-      "highQualityService": "High qualified service"
-    }
-  },
+ 
   "products":{
     "title":"Product",
     "subtitle":"Historical Products",

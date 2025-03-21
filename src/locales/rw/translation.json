@@ -16,6 +16,59 @@
     "english": "Eng",
     "kinyarwanda": "Kiny"
   },
+  "about": {
+    "header": "Ibyerekeye Twebwe",
+    "subheader": "Ibyo Dukora",
+    "tagline": "Menya ahantu h'umwuka hamwe natwe",
+    "backgroundAlt": "Ishusho y'inyuma y'ahantu h'umwuka",
+    "storyTitle": "Inkuru Yacu",
+    "storyPart1": "Yatangiye mu 2010, Ikigo OLD Fox cyatangiye n'intego yoroshye ariko ifite akamaro: guhuza abantu n'ahantu h'ingenzi mu by'umwuka ku isi. Uwashinze iki kigo, Sarah Johnson, yahawe ubutumwa n'ubunararibonye bwe bwahindutse ku hantu hatandukanye h'amadini ku isi.",
+    "storyPart2": "Icyatangiye nk'igikorwa gito gitanga ingendo ziyobowe ku hantu h'ubusabaniramana mu gace, ubu hakaba ikigo ryubashywe mu by'ubukerarugendo bw'amadini, gikora ku bantu ibihumbi bashaka umwuka buri mwaka.",
+    "quote1": "Tangira urugendo rwo gukurikirana ibintu by'umwuka no kwinjira mu muco hamwe na OldFox.",
+    "quote2": "Menya ubwiza bukomeye n'akamaro k'umwuka k'ahantu hera ku isi yose.",
+    "religiousDestinationAlt": "Ahantu h'idini",
+    "religiousLandmarkAlt": "Ikimenyetso cy'idini",
+    "whyChooseUsTitle": "Kuki Wahitamo OldFox?",
+    "features": {
+      "expertGuides": {
+        "title": "Abayobozi b'Inzobere",
+        "description": "Abayobozi bacu si abayobozi b'ingendo gusa, ahubwo ni abahanga mu byerekeye amadini n'imico y'ibihugu."
+      },
+      "respectfulApproach": {
+        "title": "Uburyo bw'Icyubahiro",
+        "description": "Twemeza ko ingendo zacu zose zikorwa mu cyubahiro gikomeye ku migenzo n'imyizerere y'ibihugu."
+      },
+      "immersiveExperiences": {
+        "title": "Ubunararibonye Bwuzuye",
+        "description": "Jya hirya yo gusura ahantu gusa, ufite amahirwe yo kwiyumvisha, gusenga, no gukora imigenzo y'umwuka."
+      },
+      "diverseDestinations": {
+        "title": "Ibyerekezo Bitandukanye",
+        "description": "Kuva ku nsengero za kera kugeza ku hantu h'ubusabaniramana bwa none, dufite ahantu hatandukanye h'umwuka."
+      },
+      "smallGroups": {
+        "title": "Amatsinda Mato",
+        "description": "Tugumisha amatsinda yacu mato kugira ngo duhe buri wese ubunararibonye bwiza kandi bufite igisobanuro."
+      },
+      "sustainableTourism": {
+        "title": "Ubukerarugendo Burambye",
+        "description": "Twiyemeje kugabanya ingaruka ku bidukikije no gushyigikira abaturage b'ibihugu."
+      }
+    },
+    "impactTitle": "Akamaro Kacu",
+    "impact": {
+      "pilgrims": "Abahererezi Twayoboye",
+      "sites": "Ahantu Hera Twasuye",
+      "countries": "Ibihugu Twasuye"
+    },
+    "team": "Itsinda Ryacu",
+    "boss": "Umuyobozi mukuru",
+    "operations": "Umuyobozi w'Ibikorwa",
+    "expert": "Inzobere mu Byerekeye Amadini",
+    "ctaTitle": "Witeguye Gutangira Urugendo Rwawe Rwera?",
+    "ctaDescription": "Twifatanye mu rugendo ruhindura ubuzima ku byerekezo by'umwuka byubashywe cyane ku isi.",
+    "ctaButton": "Reba Ingendo Zacu"
+  },
   "hero": {
   "title": "OldFox-Tour:Ingendo Nyobokamana Ziteguwe Neza",
   "explore": "kanda hano",
@@ -98,14 +151,7 @@
 },
 
   "view": "Reba",
-"about": {
-  "header": "Ibyerekeye Twebwe",
-  "subheader":"Ibyo Dukora",
-  "quote1": "Ikigo OLD Fox gitegura ingendo nyobokamana, kigafasha abantu ku giti cyabo n’amatsinda gusura ahantu hatagatifu ku isi hose. Ingendo zacu zigamije gufasha abantu gukura mu mwuka,Gusenga, kwiyumvamo no gusobanukirwa umuco. Tugufasha gusura insengero za kera cyangwa imijyi mitagatifu, buri rugendo ruhuza  abagenzi n’ukwemera kwabo n’imico yabo. Twitondera gutegura buri rugendo kugira ngo ubuzima bw’abagenzi bugende neza kandi bubashimishe.",
-  "quote2": "Ingendo zacu zitanga ubunararibonye buhindura ubuzima, zihuriza hamwe kunguka ubumenyi bw'iyobokamana no kwinjira mu muco. Abagenzi basura ahantu h’ingenzi h’idini, bakagira uruhare mu migenzo gakondo yaho, kandi bakagira umwanya wo guhura n'abemera bagenzi babo. Izi ngendo ziteza imbere isubiramo n’isesengura, zitanga ubusobanuro bwimbitse ku kwemera ndetse n’urwibutso rurambye ku hantu h’iyobokamana hubahwa cyane ku isi.",
-  "team": "Itsinda Ryacu",
-  "boss":"Umuyobozi mukuru"
-},
+
 "destiny": {
   "backgroundAlt": "Ikarita nziza yo mu kirere",
   "title": "IBYEREKEZO",
@@ -125,24 +171,138 @@
 "service": {
   "title": "Serivisi",
   "subtitle": "Serivisi Dutanga",
+  "heroBackgroundAlt": "Ishusho y'inyuma ya serivisi",
+  "serviceIllustrationAlt": "Ishusho ya serivisi",
   "our_services": "Serivisi zacu",
   "join_adventures": "Jya mu bikorwa",
   "with_stories": "n'inkuru",
-  "description": "Subiza amaso ku bimenyetso bitandukanye by’amadini no ku mibereho y’umwuka, bigaragaza umuco ukungahaye n’imigenzo gakondo. Suzuma insengero zera, za kiliziya za kera, n’amahema y’itorero arangwa n’amahoro, buri kimwe gifite inkuru z’imihango ya kera n’ukwizera gukomeye. Ujye mu minsi mikuru n’imigenzo y’umwuka ihuza abantu, ikwereke neza urugendo rw’ubumwe n’ukwemera abatuye isi bose bahuriyeho.",
+  "description": "Subiza amaso ku bimenyetso bitandukanye by'amadini no ku mibereho y'umwuka, bigaragaza umuco ukungahaye n'imigenzo gakondo. Suzuma insengero zera, za kiliziya za kera, n'amahema y'itorero arangwa n'amahoro, buri kimwe gifite inkuru z'imihango ya kera n'ukwizera gukomeye. Ujye mu minsi mikuru n'imigenzo y'umwuka ihuza abantu, ikwereke neza urugendo rw'ubumwe n'ukwemera abatuye isi bose bahuriyeho.",
   "custom_destinations": "Aho kwerekeza hihariye",
   "unforgettable_moments": "Igihe kidashobora kwibagirana",
   "competitive_pricing": "Ibiciro byiza",
   "self_guide": "Kwigira",
   "available": "24/7 Iriho",
   "transportations": "Ubwikorezi",
-  "Whychooseus":"kuki waduhitamo",
-  "whyDecription":"Ikigo cyo kwizerwa no gushingiraho",
+  "Whychooseus": "Kuki waduhitamo",
+  "whyDecription": "Ikigo cyo kwizerwa no gushingiraho",
+  "whyChooseUsBackgroundAlt": "Ishusho y'inyuma ya kuki waduhitamo",
   "benefits": {
     "affordablePrice": "Ikiguzi kinogeye buri wese",
     "varietyOfDestinations": "Ibyerekezo byinshi byo gusura",
-    "highQualityService": "Serivisi nziza niyo ntego yacu"
+    "highQualityService": "Serivisi nziza niyo ntego yacu",
+    "affordablePriceAlt": "Ikimenyetso cy'ikiguzi kinogeye buri wese",
+    "varietyOfDestinationsAlt": "Ikimenyetso cy'ibyerekezo byinshi byo gusura",
+    "highQualityServiceAlt": "Ikimenyetso cya serivisi nziza",
+    "spiritualGrowth": {
+      "title": "Gukura mu by'Umwuka",
+      "description": "Serivisi zacu zigamije guteza imbere imibanire ikomeye y'umwuka no gukura k'umuntu ku giti cye, ikagufasha mu rugendo rwawe rwo kwimenya no gusobanukiwa."
+    },
+    "culturalImmersion": {
+      "title": "Kwinjira mu Muco",
+      "description": "Menya ubudasa bw'amadini y'isi n'imico mu buryo buziguye, ukagura uko ubona ibintu no gusobanukirwa imigenzo itandukanye y'umwuka."
+    },
+    "expertGuidance": {
+      "title": "Ubuyobozi bw'Inzobere",
+      "description": "Kugira inyungu z'ubumenyi n'ibitekerezo by'abayobozi bacu b'umwuka bafite ubunararibonye n'inzobere zo mu gace batanga inyito n'ubusobanuro bwimbitse bw'ahantu hera n'imigenzo."
+    },
+    "stressRelief": {
+      "title": "Kugabanya Umuhangayiko",
+      "description": "Imyiherero yacu na serivisi zo kwiyumvisha bitanga akaruhuko ku muhangayiko wa buri munsi, biteza imbere kuryoherwa, kwitaho, n'imibereho myiza muri rusange."
+    },
+    "communityConnection": {
+      "title": "Guhuza Umuryango",
+      "description": "Ifatanye n'umuryango w'abantu bafite ibitekerezo bimwe ku ngendo z'umwuka zisa, biteza imbere imibanire ifite igisobanuro n'ubunararibonye busangiwe."
+    },
+    "personalizedExperiences": {
+      "title": "Ubunararibonye Bwihariye",
+      "description": "Dutegura serivisi zacu kugira ngo zihure n'ibyo ukeneye mu by'umwuka n'ibyo ukunda ku giti cyawe, twemeza ubunararibonye bwimbitse kandi buhindura ubuzima."
+    }
+  },
+  "featuredServicesTitle": "Serivisi Zihariye: Ingendo z'Umwuka",
+  "featuredServices": {
+    "virtualPilgrimage": {
+      "title": "Urugendo rw'Umwuka Rutaziguye",
+      "description": "Menya ahantu hera uri mu rugo rwawe ukoresheje ikoranabuhanga ryacu rishya rya VR."
+    },
+    "meditationRetreats": {
+      "title": "Imyiherero yo Kwiyumvisha Iyobowe",
+      "description": "Ifatanye n'imyiherero yacu iyobowe n'inzobere mu hantu hatekanye kugira ngo ubone amahoro yo mu mutima no gukura mu by'umwuka."
+    },
+    "heritageTours": {
+      "title": "Ingendo z'Umurage w'Amadini",
+      "description": "Menya umurage ukungahaye w'amadini y'imico itandukanye hamwe n'ingendo zacu zateguwe neza."
+    }
+  },
+  "innovation": {
+    "title": "Ibishya mu Bukerarugendo bw'Amadini",
+    "subtitle": "Gukoresha Ikoranabuhanga mu Ngendo z'Umwuka",
+    "description": "Turi ku isonga mu guhuza ikoranabuhanga rishya n'ubukerarugendo bw'amadini gakondo. Uburyo bwacu bushya burimo:",
+    "imageAlt": "Ibishya mu Bukerarugendo bw'Amadini",
+    "items": {
+      "item1": "Ingendo ziyobowe na Augmented Reality (AR) z'ahantu h'amadini",
+      "item2": "Gutegura urugendo rw'umwuka rwihariye hakoreshejwe AI",
+      "item3": "Uburyo bwo gutanga impano bushingiye kuri blockchain ku bigo by'amadini",
+      "item4": "Ibyumba byo kwiyumvisha no gusenga bya virtual reality"
+    }
+  },
+  "process": {
+    "title": "Uburyo bwa Serivisi Yacu",
+    "step1": {
+      "title": "Kujya Inama",
+      "description": "Kuganira ku ntego zawe z'umwuka n'ibyo ukunda"
+    },
+    "step2": {
+      "title": "Gutegura Byihariye",
+      "description": "Gutegura urugendo rwawe hakurikijwe ibyo ukeneye byihariye"
+    },
+    "step3": {
+      "title": "Kwitegura",
+      "description": "Kubona ubuyobozi ku kwitegura mu by'umwuka no mu buryo bwiza"
+    },
+    "step4": {
+      "title": "Ubunararibonye",
+      "description": "Gutangira urugendo rwawe ruhindura ubuzima"
+    },
+    "step5": {
+      "title": "Kwiyumvamo",
+      "description": "Gufashwa no kwiyumvamo nyuma y'urugendo"
+    }
+  },
+  "testimonials": {
+    "testimonial1": {
+      "quote": "Serivisi y'Urugendo rw'Umwuka Rutaziguye itangwa n'iki kigo ni ukuri ikintu gishya cyane. Yanyemereye guhuza n'ahantu hera sinigeze ntekereza ko nzashobora gusura. Ubunararibonye bwari bukomeye kandi bwuzuye mu by'umwuka.",
+      "name": "Sarah Thompson",
+      "title": "Uwagize uruhare mu Rugendo rw'Umwuka Rutaziguye"
+    },
+    "testimonial2": {
+      "quote": "Imyiherero yabo yo Kwiyumvisha Iyobowe yahindiye imyitozo yanjye y'umwuka. Ahantu hatekanye n'ubuyobozi bw'inzobere byatanze ubunararibonye butibagirana bw'amahoro yo mu mutima.",
+      "name": "Michael Chen",
+      "title": "Uwagize uruhare mu Myiherero yo Kwiyumvisha"
+    },
+    "testimonial3": {
+      "quote": "Urugendo rw'Umurage w'Amadini rwari urugendo rufunguye amaso mu mico n'amadini atandukanye. Rwaguriye imbere uko mbona ibintu kandi rwongera ubushobozi bwanjye bwo gushima amadini y'isi.",
+      "name": "Amira Hassan",
+      "title": "Uwagize uruhare mu Rugendo rw'Umurage"
+    }
+  },
+  "benefitsSection": {
+    "title": "Inyungu za Serivisi Zacu"
+  },
+  "uniqueApproach": {
+    "title": "Uburyo Bwacu Bwihariye mu Bukerarugendo bw'Amadini",
+    "subtitle": "Guhuza Umuco na Gakondo n'Ibishya",
+    "description": "Uburyo bwacu mu bukerarugendo bw'amadini bushingiye ku cyubahiro cy'umuco na gakondo ndetse no gukoresha ibishya by'igihe. Dushaka:",
+    "imageAlt": "Uburyo Bwacu Bwihariye",
+    "items": {
+      "item1": "Kubungabunga no guteza imbere ubunararibonye nyakuri bw'umwuka",
+      "item2": "Gukoresha ikoranabuhanga kugira ngo hongerwe ubushobozi bwo kugera no gusobanukirwa",
+      "item3": "Guteza imbere ikiganiro hagati y'amadini n'icyubahiro rusange",
+      "item4": "Gushyira imbere imigenzereze y'ubukerarugendo burambye kandi bufite inshingano",
+      "item5": "Gutanga ubufasha bwuzuye mbere, mu gihe, na nyuma y'urugendo rwawe"
+    }
   }
 },
+
 "products":{
   "title":"Ibicuruzwa",
   "subtitle":"Ibicuruzwa by'Amateka",

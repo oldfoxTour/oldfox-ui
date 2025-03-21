@@ -35,27 +35,25 @@ import {
 
 // Add this new component for the testimonial slider
 const TestimonialSlider = () => {
+  const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
   const testimonials = [
     {
-      quote:
-        "The Virtual Pilgrimage service offered by this company is truly revolutionary. It allowed me to connect with holy sites I never thought I'd be able to visit. The experience was deeply moving and spiritually enriching.",
-      name: "Sarah Thompson",
-      title: "Virtual Pilgrimage Participant",
+      quote: t("service.testimonials.testimonial1.quote"),
+      name: t("service.testimonials.testimonial1.name"),
+      title: t("service.testimonials.testimonial1.title"),
       image: girl || "/placeholder.svg",
     },
     {
-      quote:
-        "Their Guided Meditation Retreats have transformed my spiritual practice. The serene locations and expert guidance provided an unforgettable experience of inner peace.",
-      name: "Michael Chen",
-      title: "Meditation Retreat Attendee",
+      quote: t("service.testimonials.testimonial2.quote"),
+      name: t("service.testimonials.testimonial2.name"),
+      title: t("service.testimonials.testimonial2.title"),
       image: "/placeholder.svg?height=48&width=48",
     },
     {
-      quote:
-        "The Religious Heritage Tour was an eye-opening journey through different cultures and faiths. It broadened my perspective and deepened my appreciation for world religions.",
-      name: "Amira Hassan",
-      title: "Heritage Tour Participant",
+      quote: t("service.testimonials.testimonial3.quote"),
+      name: t("service.testimonials.testimonial3.name"),
+      title: t("service.testimonials.testimonial3.title"),
       image: "/placeholder.svg?height=48&width=48",
     },
   ]
@@ -69,9 +67,9 @@ const TestimonialSlider = () => {
   }
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000)
-    return () => clearInterval(timer)
-  }, [nextSlide])
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -123,6 +121,100 @@ function Service() {
     AOS.init({ duration: 2000, easing: "ease-out" })
   }, [])
 
+  const featuredServices = [
+    {
+      title: t("service.featuredServices.virtualPilgrimage.title"),
+      description: t("service.featuredServices.virtualPilgrimage.description"),
+      icon: <FaLeaf className="text-4xl text-green-500" />,
+    },
+    {
+      title: t("service.featuredServices.meditationRetreats.title"),
+      description: t("service.featuredServices.meditationRetreats.description"),
+      icon: <FaHeart className="text-4xl text-red-500" />,
+    },
+    {
+      title: t("service.featuredServices.heritageTours.title"),
+      description: t("service.featuredServices.heritageTours.description"),
+      icon: <FaStar className="text-4xl text-yellow-500" />,
+    },
+  ]
+
+  const innovationItems = [
+    t("service.innovation.items.item1"),
+    t("service.innovation.items.item2"),
+    t("service.innovation.items.item3"),
+    t("service.innovation.items.item4"),
+  ]
+
+  const serviceProcess = [
+    { 
+      step: 1, 
+      title: t("service.process.step1.title"), 
+      description: t("service.process.step1.description") 
+    },
+    { 
+      step: 2, 
+      title: t("service.process.step2.title"), 
+      description: t("service.process.step2.description") 
+    },
+    { 
+      step: 3, 
+      title: t("service.process.step3.title"), 
+      description: t("service.process.step3.description") 
+    },
+    { 
+      step: 4, 
+      title: t("service.process.step4.title"), 
+      description: t("service.process.step4.description") 
+    },
+    { 
+      step: 5, 
+      title: t("service.process.step5.title"), 
+      description: t("service.process.step5.description") 
+    },
+  ]
+
+  const benefits = [
+    {
+      title: t("service.benefits.spiritualGrowth.title"),
+      description: t("service.benefits.spiritualGrowth.description"),
+      icon: <FaLeaf className="text-4xl text-green-500" />,
+    },
+    {
+      title: t("service.benefits.culturalImmersion.title"),
+      description: t("service.benefits.culturalImmersion.description"),
+      icon: <FaGlobe className="text-4xl text-blue-500" />,
+    },
+    {
+      title: t("service.benefits.expertGuidance.title"),
+      description: t("service.benefits.expertGuidance.description"),
+      icon: <FaUserGraduate className="text-4xl text-purple-500" />,
+    },
+    {
+      title: t("service.benefits.stressRelief.title"),
+      description: t("service.benefits.stressRelief.description"),
+      icon: <FaHeart className="text-4xl text-red-500" />,
+    },
+    {
+      title: t("service.benefits.communityConnection.title"),
+      description: t("service.benefits.communityConnection.description"),
+      icon: <FaUsers className="text-4xl text-yellow-500" />,
+    },
+    {
+      title: t("service.benefits.personalizedExperiences.title"),
+      description: t("service.benefits.personalizedExperiences.description"),
+      icon: <FaUserCog className="text-4xl text-indigo-500" />,
+    },
+  ]
+
+  const uniqueApproachItems = [
+    t("service.uniqueApproach.items.item1"),
+    t("service.uniqueApproach.items.item2"),
+    t("service.uniqueApproach.items.item3"),
+    t("service.uniqueApproach.items.item4"),
+    t("service.uniqueApproach.items.item5"),
+  ]
+
   return (
     <div className="flex overflow-hidden flex-col bg-stone-50 bg-opacity-50">
       {/* Hero Section */}
@@ -134,7 +226,7 @@ function Service() {
           loading="lazy"
           srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/2dea07583a8ff0a12344f081d7f90c562d852fcae40296473a302011d35bcc92?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497"
           className="object-cover absolute inset-0 size-full blur-sm"
-          alt="Services background"
+          alt={t("service.heroBackgroundAlt")}
         />
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="flex relative flex-col justify-start items-center px-2 w-full sm:px-2 sm:pt-10 md:px-20 md:pt-24">
@@ -194,7 +286,7 @@ function Service() {
                 srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/4289ae2ae8964f1f484ea9f7e4fa2b6c23686492e572727f1970567a3dc72158?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497"
                 className="object-contain w-full aspect-[0.81] mt-10 md:mt-10"
                 data-aos="fade-up"
-                alt="Service illustration"
+                alt={t("service.serviceIllustrationAlt")}
               />
             </div>
           </div>
@@ -207,6 +299,7 @@ function Service() {
             srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5a14ea80844be504fd1b0ca52426194f71a123c76c580723365dc82feae51c75?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497"
             className="object-cover absolute inset-0 size-full"
             data-aos="fade-up"
+            alt={t("service.whyChooseUsBackgroundAlt")}
           />
 
           <div
@@ -226,19 +319,19 @@ function Service() {
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/ab42847af8ca220686e9916a9ce7128f82eeb5ab10498a9d21e3c5665b631aa9?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-                  alt="Affordable price guarantee"
+                  alt={t("service.benefits.affordablePriceAlt")}
                   className="w-12 h-12 md:w-20 md:h-20 object-contain ml-8"
                 />
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d393d690b820b385444fa81c312cabcbc100e2cfc05ba174d5c218e992479f9?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-                  alt="Wide variety of destinations"
+                  alt={t("service.benefits.varietyOfDestinationsAlt")}
                   className="w-12 h-12 md:w-20 md:h-20 object-contain"
                 />
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a194d8ac904f74af5c6c5de4732ebd05abb490fe021c66be21aa39935ed4394?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-                  alt="High qualified service"
+                  alt={t("service.benefits.highQualityServiceAlt")}
                   className="w-12 h-12 md:w-20 md:h-20 object-contain mr-5"
                 />
               </div>
@@ -257,27 +350,9 @@ function Service() {
       {/* Featured Service */}
       <div className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">Featured Services: Spiritual Journeys</h2>
+          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">{t("service.featuredServicesTitle")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Virtual Pilgrimage",
-                description: "Experience sacred sites from the comfort of your home with our innovative VR technology.",
-                icon: <FaLeaf className="text-4xl text-green-500" />,
-              },
-              {
-                title: "Guided Meditation Retreats",
-                description:
-                  "Join our expert-led meditation retreats in serene locations for inner peace and spiritual growth.",
-                icon: <FaHeart className="text-4xl text-red-500" />,
-              },
-              {
-                title: "Religious Heritage Tours",
-                description:
-                  "Explore the rich religious heritage of various cultures with our carefully curated tours.",
-                icon: <FaStar className="text-4xl text-yellow-500" />,
-              },
-            ].map((service, index) => (
+            {featuredServices.map((service, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-lg"
@@ -296,28 +371,22 @@ function Service() {
       {/* Innovation in Religious Tourism */}
       <div className="py-16 bg-gradient-to-r bg-white shadow-lg">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">Innovation in Religious Tourism</h2>
+          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">{t("service.innovation.title")}</h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-1/2" data-aos="fade-right">
               <img
-                src={kibeho}
-                alt="Innovative Religious Tourism"
+                src={kibeho || "/placeholder.svg"}
+                alt={t("service.innovation.imageAlt")}
                 className="rounded-lg shadow-lg w-full h-80"
               />
             </div>
             <div className="md:w-1/2" data-aos="fade-left">
-              <h3 className="text-2xl font-semibold mb-4">Embracing Technology for Spiritual Journeys</h3>
+              <h3 className="text-2xl font-semibold mb-4">{t("service.innovation.subtitle")}</h3>
               <p className="text-gray-600 mb-6">
-                We're at the forefront of integrating cutting-edge technology with traditional religious tourism. Our
-                innovative approaches include:
+                {t("service.innovation.description")}
               </p>
               <ul className="list-none space-y-4">
-                {[
-                  "Augmented Reality (AR) guided tours of religious sites",
-                  "AI-powered personalized spiritual journey planning",
-                  "Blockchain-based donation systems for religious institutions",
-                  "Virtual reality meditation and prayer rooms",
-                ].map((item, index) => (
+                {innovationItems.map((item, index) => (
                   <li key={index} className="flex items-center">
                     <span className="text-sky-600 mr-2">•</span>
                     <span>{item}</span>
@@ -331,15 +400,9 @@ function Service() {
 
       {/* Service Process */}
       <div className="container mx-auto px-4 py-16 relative overflow-hidden">
-        <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">Our Service Process</h2>
+        <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">{t("service.process.title")}</h2>
         <div className="flex flex-col md:flex-row justify-between items-center relative z-10">
-          {[
-            { step: 1, title: "Consultation", description: "Discuss your spiritual goals and preferences" },
-            { step: 2, title: "Customization", description: "Tailor your journey to your specific needs" },
-            { step: 3, title: "Preparation", description: "Receive guidance on spiritual and practical preparation" },
-            { step: 4, title: "Experience", description: "Embark on your transformative spiritual journey" },
-            { step: 5, title: "Reflection", description: "Post-journey support and reflection sessions" },
-          ].map((step, index) => (
+          {serviceProcess.map((step, index) => (
             <div
               key={index}
               className="flex flex-col items-center mb-8 md:mb-0 relative"
@@ -369,70 +432,12 @@ function Service() {
         ))}
       </div>
 
-{/*    
-      <div className="bg-gray-100 py-16 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">What Our Clients Say</h2>
-          <TestimonialSlider />
-        </div>
-       
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-3 h-3 bg-white rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              boxShadow: "0 0 5px rgba(255, 255, 255, 0.7)",
-            }}
-          ></div>
-        ))}
-      </div> */}
-
       {/* Benefits of Our Services */}
       <div className="py-16 bg-gradient-to-r  bg-white shadow-lg">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">Benefits of Our Services</h2>
+          <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">{t("service.benefitsSection.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Spiritual Growth",
-                description:
-                  "Our services are designed to foster deep spiritual connections and personal growth, helping you on your journey of self-discovery and enlightenment.",
-                icon: <FaLeaf className="text-4xl text-green-500" />,
-              },
-              {
-                title: "Cultural Immersion",
-                description:
-                  "Experience the rich tapestry of world religions and cultures firsthand, broadening your perspective and understanding of diverse spiritual practices.",
-                icon: <FaGlobe className="text-4xl text-blue-500" />,
-              },
-              {
-                title: "Expert Guidance",
-                description:
-                  "Benefit from the knowledge and insights of our experienced spiritual guides and local experts who provide context and deeper understanding of sacred sites and practices.",
-                icon: <FaUserGraduate className="text-4xl text-purple-500" />,
-              },
-              {
-                title: "Stress Relief",
-                description:
-                  "Our retreats and meditation services offer a respite from daily stresses, promoting relaxation, mindfulness, and overall well-being.",
-                icon: <FaHeart className="text-4xl text-red-500" />,
-              },
-              {
-                title: "Community Connection",
-                description:
-                  "Join a community of like-minded individuals on similar spiritual journeys, fostering meaningful connections and shared experiences.",
-                icon: <FaUsers className="text-4xl text-yellow-500" />,
-              },
-              {
-                title: "Personalized Experiences",
-                description:
-                  "We tailor our services to meet your individual spiritual needs and preferences, ensuring a deeply personal and transformative experience.",
-                icon: <FaUserCog className="text-4xl text-indigo-500" />,
-              },
-            ].map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-lg"
@@ -452,30 +457,23 @@ function Service() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">
-            Our Unique Approach to Religious Tourism
+            {t("service.uniqueApproach.title")}
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-1/2" data-aos="fade-right">
               <img
-                src={tukey}
-                alt="Our Unique Approach"
+                src={tukey || "/placeholder.svg"}
+                alt={t("service.uniqueApproach.imageAlt")}
                 className="rounded-lg shadow-lg w-full h-80"
               />
             </div>
             <div className="md:w-1/2" data-aos="fade-left">
-              <h3 className="text-2xl font-semibold mb-4">Blending Tradition with Innovation</h3>
+              <h3 className="text-2xl font-semibold mb-4">{t("service.uniqueApproach.subtitle")}</h3>
               <p className="text-gray-600 mb-6">
-                Our approach to religious tourism is rooted in respect for tradition while embracing modern innovations.
-                We strive to:
+                {t("service.uniqueApproach.description")}
               </p>
               <ul className="list-none space-y-4">
-                {[
-                  "Preserve and promote authentic spiritual experiences",
-                  "Utilize technology to enhance accessibility and understanding",
-                  "Foster interfaith dialogue and mutual respect",
-                  "Prioritize sustainable and responsible tourism practices",
-                  "Provide comprehensive support before, during, and after your journey",
-                ].map((item, index) => (
+                {uniqueApproachItems.map((item, index) => (
                   <li key={index} className="flex items-center">
                     <span className="text-sky-600 mr-2">•</span>
                     <span>{item}</span>
@@ -501,4 +499,3 @@ function Service() {
 }
 
 export default Service
-
