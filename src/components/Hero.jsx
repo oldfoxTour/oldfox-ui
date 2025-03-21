@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchUpcomingPosts } from "../slices/postSlice"
@@ -5,7 +7,7 @@ import { FaSearch } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 import video from "../IMAGE/video.mp4"
 import { useTranslation } from "react-i18next"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useSpring, animated, config } from "react-spring"
 import { format } from "date-fns"
 
@@ -34,7 +36,7 @@ export default function TravelHero() {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString)
-    return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(date)
+    return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" }).format(date)
   }
 
   const titleAnimation = useSpring({
@@ -102,9 +104,7 @@ export default function TravelHero() {
           </video>
         </div>
 
-        <div
-          className="relative container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center justify-between"
-        >
+        <div className="relative container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center justify-between">
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left">
             <animated.h1
               ref={titleRef}
@@ -114,7 +114,7 @@ export default function TravelHero() {
               {t("hero.title")}
             </animated.h1>
 
-<div className="space-y-6 max-w-md mx-auto lg:mx-0">
+            <div className="space-y-6 max-w-md mx-auto lg:mx-0">
               {[
                 { id: "internationalTour", defaultDesc: "OldFox guides you through global spiritual landmarks" },
                 { id: "religionTour", defaultDesc: "Explore sacred sites with OldFox's expert knowledge" },
@@ -166,16 +166,12 @@ export default function TravelHero() {
               )}
             </div>
 
-            <div
-              className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 shadow-lg relative overflow-hidden"
-            >
-              <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
-                {t("hero.upcomingTrip")}
-              </h2>
+            <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 shadow-lg relative overflow-hidden h-[300px] lg:h-[400px]">
+              <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">{t("hero.upcomingTrip")}</h2>
               {loading ? (
                 <p className="text-white">Loading...</p>
               ) : (
-                <div className="relative aspect-[16/7.6] overflow-hidden rounded-lg">
+                <div className="relative h-[calc(100%-40px)] overflow-hidden rounded-lg">
                   {upcomingTrips && upcomingTrips.length > 0 ? (
                     <div
                       className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
@@ -184,34 +180,30 @@ export default function TravelHero() {
                       }}
                     >
                       {upcomingTrips.map((trip, index) => (
-                        <div
-                          key={index}
-                          className="w-full h-full flex-shrink-0"
-                          style={{ position: "relative" }}
-                        >
+                        <div key={index} className="w-full h-full flex-shrink-0" style={{ position: "relative" }}>
                           <img
                             src={
-                              Array.isArray(trip.postImage) && trip.postImage.length > 0
-                                ? trip.postImage[0].url
-                                : ""
+                              Array.isArray(trip.postImage) && trip.postImage.length > 0 ? trip.postImage[0].url : ""
                             }
                             alt={trip.title}
                             className="object-cover w-full h-full"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                          <div className="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold sm:gap-9">
+                          <div className="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
                             {trip.title}
-                            <div className="flex flex-col sm:flex-row justify-between items-center">
-                              <Link 
-                                to="/destiny" 
+                            <div className="flex flex-col sm:flex-row justify-between items-center mt-2">
+                              <Link
+                                to="/destiny"
                                 className="bg-blue-500 text-white py-1 px-2 sm:py-2 sm:px-4 rounded-full inline-block hover:bg-blue-600 transition"
                               >
                                 Book your trip
                               </Link>
                               <h4 className="text-blue-500 mt-2 sm:mt-0">
-                                TOUR DATE: 
-                                <span className="text-white">
-                                  {trip.postDate ? format(new Date(trip.postDate), 'MMMM dd, yyyy') : "Date not available"}
+                                TOUR DATE:
+                                <span className="text-white ml-1">
+                                  {trip.postDate
+                                    ? format(new Date(trip.postDate), "MMMM dd, yyyy")
+                                    : "Date not available"}
                                 </span>
                               </h4>
                             </div>
@@ -235,5 +227,4 @@ export default function TravelHero() {
     </>
   )
 }
-
 

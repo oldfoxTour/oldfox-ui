@@ -85,8 +85,8 @@ const Gallery = () => {
   }, [])
 
   return (
-    <div className="bg-gray-100 min-h-screen py-12 pt-32 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-center text-sky-600 mb-12">Explore Beautiful Destinations</h1>
+    <div className="bg-gray-700 min-h-screen py-12 pt-32 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-center text-sky-500 mb-12">Explore Beautiful Destinations</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {locations.map((location, index) => (
           <motion.div

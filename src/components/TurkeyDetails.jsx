@@ -1,92 +1,54 @@
 import React, { useState } from 'react';
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import city from "../IMAGE/city.jpg";
 import tukey from "../IMAGE/tukey.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import BookingForm from "./BookingForm";
-
+import { useDispatch } from "react-redux";
+import {  FaQuoteLeft } from "react-icons/fa";
 const recentlyVisitedImages = [city, tukey];
 
 function RelatedTours() {
-  const [tours, setTours] = useState([
-    { id: 1, name: "Kibeho", location: "Nyaruguru", likes: 35, liked: false, comments: [] },
-    { id: 2, name: "Cairo", location: "Egypt", likes: 50, liked: false, comments: [] }
-  ]);
-
-  const toggleLike = (id) => {
-    setTours(
-      tours.map((tour) =>
-        tour.id === id ? { ...tour, liked: !tour.liked, likes: tour.liked ? tour.likes - 1 : tour.likes + 1 } : tour
-      )
-    );
-  };
-
-  const addComment = (id, comment) => {
-    setTours(
-      tours.map((tour) =>
-        tour.id === id ? { ...tour, comments: [...tour.comments, comment] } : tour
-      )
-    );
-  };
+  const relatedDestinations = [
+    { 
+      id: 1, 
+      name: "Kibeho", 
+      location: "Nyaruguru, Rwanda", 
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/ac109e70ddda2f99596b7c5e3d028a6ecd87d15434bcbc75fd434ab0f43f2d2e?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
+      description: "Known for Marian apparitions, attracting pilgrims seeking spiritual renewal."
+    },
+    { 
+      id: 2, 
+      name: "Jerusalem", 
+      location: "Israel", 
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/e31f819637328b0b24a419f37c97a6b26a48dd194e979979d0ece2a75bb68d20?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
+      description: "Explore sacred sites like the Western Wall and Church of the Holy Sepulchre."
+    }
+  ];
 
   return (
-    <div>
-      <div className="text-black text-xl font-bold mb-4">Related Tours</div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {tours.map((tour) => (
-          <div key={tour.id} className="bg-white shadow-lg p-4">
-            <img
-              className="w-full h-40 object-cover mb-4"
-              src={
-                tour.name === "Kibeho"
-                  ? "https://cdn.builder.io/api/v1/image/assets/TEMP/ac109e70ddda2f99596b7c5e3d028a6ecd87d15434bcbc75fd434ab0f43f2d2e?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-                  : "https://cdn.builder.io/api/v1/image/assets/TEMP/aa2915a0b34429f473d79e69bdfa330c9faf55d12ff59b9dddbaf71385e7f9fb?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-              }
-              alt={tour.name}
-            />
-            <div className="text-black text-lg font-bold">{tour.name}</div>
-            <div className="text-sm text-gray-500">{tour.location}</div>
-            <div className="flex justify-between mt-2 text-sm text-gray-500">
-              <div className="flex items-center">
-                <button onClick={() => toggleLike(tour.id)} className="mr-2">
-                  {tour.liked ? (
-                    <FaHeart className="text-red-500" />
-                  ) : (
-                    <FaRegHeart className="text-gray-500" />
-                  )}
-                </button>
-                <span>{tour.likes} Likes</span>
+    <div className="mt-12">
+      <div className="flex items-center mb-6">
+        <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+        <h2 className="text-2xl font-bold text-gray-800">Related Religious Destinations</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {relatedDestinations.map((destination) => (
+          <div key={destination.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="relative">
+              <img
+                className="w-full h-56 object-cover"
+                src={destination.image || "/placeholder.svg"}
+                alt={destination.name}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <h3 className="text-white text-xl font-bold">{destination.name}</h3>
+                <div className="flex items-center text-white/80 text-sm mt-1">
+                  <FaMapMarkerAlt className="mr-1" />
+                  <span>{destination.location}</span>
+                </div>
               </div>
-              <span>120$</span>
             </div>
-
-            <div className="mt-4">
-              <h4 className="text-black text-sm font-bold">Comments:</h4>
-              {tour.comments.length === 0 ? (
-                <p className="text-gray-500">No comments yet</p>
-              ) : (
-                <ul className="text-sm text-gray-700">
-                  {tour.comments.map((comment, index) => (
-                    <li key={index} className="border-b border-gray-200 py-1">
-                      {comment}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="mt-2">
-                <input
-                  type="text"
-                  className="w-full h-10 border border-gray-300 px-2 mb-2"
-                  placeholder="Add a comment..."
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && e.target.value.trim()) {
-                      addComment(tour.id, e.target.value);
-                      e.target.value = "";
-                    }
-                  }}
-                />
-              </div>
+            <div className="p-5">
+              <p className="text-gray-600">{destination.description}</p>
             </div>
           </div>
         ))}
@@ -97,7 +59,6 @@ function RelatedTours() {
 
 function Destinations() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
   const dispatch = useDispatch();
 
   const nextImage = () => {
@@ -112,159 +73,173 @@ function Destinations() {
     );
   };
 
-  const destinations = [
+  const religiousDestinations = [
     {
-      name: "Kibeho Shrine",
-      location: "Nyaruguru",
-      description: "Kibeho is known for the Marian apparitions reported by three Rwandan schoolgirls in the 1980s. This shrine is one of the most significant pilgrimage sites for Catholics in Rwanda.",
-      price: 500,
-      date: "January 10, 2025"
+      name: "Hagia Sophia",
+      location: "Istanbul, Turkey",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/54/be/42/hagia-sophia-museum-by.jpg?w=1200&h=1200&s=1",
+      description: "Originally a Byzantine cathedral, then a mosque, then a museum, and now a mosque again, Hagia Sophia is renowned for its massive dome and stunning Byzantine mosaics that blend Christian and Islamic influences."
     },
     {
-      name: "Kigali Genocide Memorial",
-      location: "Kigali",
-      description: "A visit to the Kigali Genocide Memorial is essential for understanding Rwanda's recent history. It also reflects on the lives of many Christians who perished in the 1994 genocide.",
-      price: 400,
-      date: "January 12, 2025"
+      name: "Blue Mosque (Sultan Ahmed Mosque)",
+      location: "Istanbul, Turkey",
+      image: "https://cdn-imgix.headout.com/media/images/0bc7bfc5d039409e94b0fc256ca3008d-25579-istanbul-combo-topkapi-palace--hagia-sophia---blue-mosque-02.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&fit=crop&ar=7%3A4&crop=faces",
+      description: "Famous for its blue Iznik tiles and six minarets, this functioning mosque is one of Istanbul's most iconic religious sites, showcasing magnificent Ottoman architecture."
     },
     {
-      name: "Nyundo Cathedral Visit",
-      location: "Nyundo",
-      description: "The Nyundo Cathedral is one of Rwanda's largest and most significant Christian sites, offering a place for quiet reflection and a connection to the country's rich Christian history.",
-      price: 300,
-      date: "January 15, 2025"
+      name: "Ephesus",
+      location: "Selçuk, Turkey",
+      image: "https://ertungaecir.com/wp-content/uploads/ephesus-tours.jpg",
+      description: "Home to the ruins of the Temple of Artemis and the Basilica of St. John, Ephesus was an important early Christian site where the apostle Paul preached and is mentioned in the Book of Revelation."
+    },
+    {
+      name: "Cappadocia Cave Churches",
+      location: "Cappadocia, Turkey",
+      image: "https://imagedelivery.net/zdouvHukpwsjEjZlhC3LCA/bigguybigworld.com/2021/03/Cappadocia-10-1.jpeg/w=9999",
+      description: "The rock-cut churches and monasteries of Cappadocia, especially in Göreme Open Air Museum, feature remarkable Byzantine frescoes and were used by early Christians hiding from persecution."
     }
   ];
 
-  const handleBooking = () => {
-    setIsBookingFormOpen(true);
-  };
-
   return (
-    <div className="w-full h-auto bg-stone-50 relative">
-      <div className="relative w-full h-[50vh]">
+    <div className="w-full bg-gray-50 relative">
+      {/* Hero Section */}
+      <div className="relative w-full h-[60vh]">
         <img
           className="w-full h-full object-cover"
           src='https://cdn.builder.io/api/v1/image/assets/TEMP/d8efb44e43706d2ab842fdd19c2244025c01c5b8fad3492a380746506e88fc7c?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28'
-          alt="City Background"
+          alt="Turkey Background"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute left-10 md:left-16 top-1/2 transform -translate-y-1/2 text-white text-4xl md:text-5xl font-bold">
-          Turkey
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
+        <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Discover Turkey</h1>
+            <p className="text-xl text-white/90 max-w-2xl">
+              Experience a spiritual journey through one of the world's most historically rich religious destinations
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-2 flex flex-col lg:flex-row gap-8 py-8 px-4 md:px-16">
-        <div className="w-full lg:w-2/3 space-y-8">
-          <div>
-            <div className="text-sky-500 text-2xl font-bold mb-4">
-              Turkey (Istanbul):
-            </div>
-            <p className="text-black text-lg mb-6">
-              Experience Turkey's religious heritage: visit Istanbul's Hagia Sophia, the Blue Mosque, Ephesus's Basilica of St. John, and Cappadocia's ancient cave churches for spiritual enrichment.
-            </p>
-            <div className="text-sky-500 text-2xl font-bold mb-4">
-              Turkey:
-            </div>
-            <p className="text-black text-lg">
-              Embark on a captivating journey to Turkey, a land steeped in rich religious history. Start in Istanbul, where East meets West. Visit the majestic Hagia Sophia, a former cathedral and mosque, now a museum, showcasing stunning Byzantine architecture. Explore the Blue Mosque, famous for its striking blue tiles and impressive domes.
-              <br />
-              Next, head to Cappadocia, known for its unique rock formations and ancient cave churches adorned with beautiful frescoes. Discover the Goreme Open-Air Museum, a UNESCO World Heritage site.
-              <br />
-              Travel to Ephesus, where you can visit the Basilica of St. John and the ruins of the ancient city, reflecting early Christianity's influence.
-              <br />
-              Lastly, visit Pamukkale, famous for its travertine terraces and ancient ruins of Hierapolis, known for its thermal pools.
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        {/* Introduction */}
+        <div className="mb-16">
+          <div className="flex items-center mb-6">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+        
+            <h2 className="text-2xl font-bold text-gray-800">Turkey (Istanbul)</h2>
+          </div>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            Experience Turkey's religious heritage: visit Istanbul's Hagia Sophia, the Blue Mosque, Ephesus's Basilica
+            of St. John, and Cappadocia's ancient cave churches for spiritual enrichment.
+          </p>
+          
+          <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-sky-500 mb-8">
+        <div className="flex mb-4">
+                   <FaQuoteLeft className="text-sky-300 text-3xl mr-4" />
+                   <h3 className="text-xl font-bold text-gray-800">Turkey</h3>
+                 </div>
+            <p className="text-gray-700 leading-relaxed">
+              Embark on a captivating journey to Turkey, a land steeped in rich religious history. Start in Istanbul,
+              where East meets West. Visit the majestic Hagia Sophia, a former cathedral and mosque, now a museum,
+              showcasing stunning Byzantine architecture. Explore the Blue Mosque, famous for its striking blue tiles
+              and impressive domes.
+              <br /><br />
+              Next, head to Cappadocia, known for its unique rock formations and ancient cave churches adorned with
+              beautiful frescoes. Discover the Goreme Open-Air Museum, a UNESCO World Heritage site.
+              <br /><br />
+              Travel to Ephesus, where you can visit the Basilica of St. John and the ruins of the ancient city,
+              reflecting early Christianity's influence.
+              <br /><br />
+              Lastly, visit Pamukkale, famous for its travertine terraces and ancient ruins of Hierapolis, known for its
+              thermal pools.
             </p>
           </div>
+        </div>
 
-          <div className="space-y-6">
-            {destinations.map((destination) => (
-              <div key={destination.name} className="bg-white shadow-lg rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-2">{destination.name}</h2>
-                <p className="text-gray-600 mb-4">{destination.description}</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold">Price: ${destination.price}</p>
-                    <p className="text-sm text-gray-500">Trip Date: {destination.date}</p>
+        {/* Top Religious Destinations */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">Top Religious Destinations</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {religiousDestinations.map((destination, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="relative">
+                  <img
+                    className="w-full h-56 object-cover"
+                    src={destination.image || "/placeholder.svg"}
+                    alt={destination.name}
+                  />
+                  <div className="absolute top-0 right-0 bg-sky-500 text-white px-3 py-1 rounded-bl-lg">
+                    <FaMapMarkerAlt className="inline mr-1" />
+                    {destination.location.split(',')[0]}
                   </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{destination.name}</h3>
+                  <p className="text-gray-600">{destination.description}</p>
                 </div>
               </div>
             ))}
           </div>
-
-          <div>
-            <div className="text-black text-xl font-bold mb-4">
-              Recently Visited Trip
-            </div>
-            <div className="relative">
-              <img
-                className="w-full h-auto"
-                src={recentlyVisitedImages[currentImageIndex]}
-                alt="Recently Visited Trip"
-              />
-              <button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 px-2 py-1"
-              >
-                Prev
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 px-2 py-1"
-              >
-                Next
-              </button>
-            </div>
-            <div className="text-blue-500 text-lg mb-4">
-              Click Use map to track the place
-            </div>
-          </div>
-
-          <RelatedTours />
         </div>
 
-        <div className="w-full lg:w-1/3 h-auto mb-8 lg:mb-0 pb-20">
-          <div className="bg-sky-500 text-white flex justify-between items-center px-6 py-4">
-            <div className="text-lg font-semibold">Total Price</div>
-            <div className="text-3xl font-bold">$1200</div>
+        {/* Recently Visited */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">Recently Visited</h2>
           </div>
-
-          <div className="bg-white shadow-lg p-6">
-            <div className="bg-sky-500 text-white text-center py-3 mb-6">
-              <span className="text-base font-semibold">Tour Summary</span>
-            </div>
-            <div className="space-y-4">
-              {destinations.map((destination) => (
-                <div key={destination.name} className="flex justify-between">
-                  <span>{destination.name}</span>
-                  <span>${destination.price}</span>
-                </div>
-              ))}
-              <div className="border-t pt-4 font-bold">
-                <div className="flex justify-between">
-                  <span>Total</span>
-                  <span>$1200</span>
-                </div>
-              </div>
-            </div>
-            <button 
-              onClick={handleBooking}
-              className="w-full mt-6 bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50"
+          
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <img
+              className="w-full h-[400px] object-cover"
+              src={recentlyVisitedImages[currentImageIndex] || "/placeholder.svg"}
+              alt="Recently Visited Trip"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+              aria-label="Previous image"
             >
-              Book Now
+              <FaChevronLeft />
             </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+              aria-label="Next image"
+            >
+              <FaChevronRight />
+            </button>
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h3 className="text-white text-2xl font-bold mb-2">Istanbul, Turkey</h3>
+              <p className="text-white/90">A city where East meets West, offering a unique blend of cultures and religions</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tours */}
+        <RelatedTours />
+        
+        {/* Decorative element */}
+        <div className="flex justify-center my-16">
+          <div className="flex items-center space-x-2">
+            <div className="h-1 w-3 bg-sky-300 rounded-full"></div>
+            <div className="h-1 w-6 bg-sky-400 rounded-full"></div>
+            <div className="h-1 w-12 bg-sky-500 rounded-full"></div>
+            <div className="h-1 w-6 bg-sky-400 rounded-full"></div>
+            <div className="h-1 w-3 bg-sky-300 rounded-full"></div>
           </div>
         </div>
       </div>
-
-      <BookingForm
-        isOpen={isBookingFormOpen}
-        onClose={() => setIsBookingFormOpen(false)}
-        postId="turkey-tour-2023"
-      />
     </div>
   );
 }
 
 export default Destinations;
-

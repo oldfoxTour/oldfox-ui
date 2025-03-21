@@ -1,89 +1,57 @@
 import React, { useState } from "react";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 import israel from "../IMAGE/israel.jpg";
-import { useDispatch, useSelector } from "react-redux";
-import BookingForm from "./BookingForm";
+import { useDispatch } from "react-redux";
+
+// Sample images for the slider
+const israelImages = [
+  israel,
+  "https://cdn.builder.io/api/v1/image/assets/TEMP/e31f819637328b0b24a419f37c97a6b26a48dd194e979979d0ece2a75bb68d20?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
+];
 
 function RelatedTours() {
-  const [tours, setTours] = useState([
-    { id: 1, name: "Kibeho", location: "Nyaruguru", likes: 35, liked: false, comments: [] },
-    { id: 2, name: "Cairo", location: "Egypt", likes: 50, liked: false, comments: [] }
-  ]);
-
-  const toggleLike = (id) => {
-    setTours(
-      tours.map((tour) =>
-        tour.id === id ? { ...tour, liked: !tour.liked, likes: tour.liked ? tour.likes - 1 : tour.likes + 1 } : tour
-      )
-    );
-  };
-
-  const addComment = (id, comment) => {
-    setTours(
-      tours.map((tour) =>
-        tour.id === id ? { ...tour, comments: [...tour.comments, comment] } : tour
-      )
-    );
-  };
+  const relatedDestinations = [
+    { 
+      id: 1, 
+      name: "Kibeho", 
+      location: "Nyaruguru, Rwanda", 
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/ac109e70ddda2f99596b7c5e3d028a6ecd87d15434bcbc75fd434ab0f43f2d2e?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
+      description: "Known for Marian apparitions, attracting pilgrims seeking spiritual renewal."
+    },
+    { 
+      id: 2, 
+      name: "Cairo", 
+      location: "Egypt", 
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/aa2915a0b34429f473d79e69bdfa330c9faf55d12ff59b9dddbaf71385e7f9fb?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
+      description: "Visit the iconic Islamic mosques and ancient Coptic churches."
+    }
+  ];
 
   return (
-    <div>
-      <div className="text-black text-xl font-bold mb-4">Related Tours</div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {tours.map((tour) => (
-          <div key={tour.id} className="bg-white shadow-lg p-4">
-            <img
-              className="w-full h-40 object-cover mb-4"
-              src={
-                tour.name === "Kibeho"
-                  ? "https://cdn.builder.io/api/v1/image/assets/TEMP/ac109e70ddda2f99596b7c5e3d028a6ecd87d15434bcbc75fd434ab0f43f2d2e?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-                  : "https://cdn.builder.io/api/v1/image/assets/TEMP/aa2915a0b34429f473d79e69bdfa330c9faf55d12ff59b9dddbaf71385e7f9fb?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28"
-              }
-              alt={tour.name}
-            />
-            <div className="text-black text-lg font-bold">{tour.name}</div>
-            <div className="text-sm text-gray-500">{tour.location}</div>
-            <div className="flex justify-between mt-2 text-sm text-gray-500">
-              <div className="flex items-center">
-                <button onClick={() => toggleLike(tour.id)} className="mr-2">
-                  {tour.liked ? (
-                    <FaHeart className="text-red-500" />
-                  ) : (
-                    <FaRegHeart className="text-gray-500" />
-                  )}
-                </button>
-                <span>{tour.likes} Likes</span>
+    <div className="mt-12">
+      <div className="flex items-center mb-6">
+        <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+        <h2 className="text-2xl font-bold text-gray-800">Related Religious Destinations</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {relatedDestinations.map((destination) => (
+          <div key={destination.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="relative">
+              <img
+                className="w-full h-56 object-cover"
+                src={destination.image || "/placeholder.svg"}
+                alt={destination.name}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <h3 className="text-white text-xl font-bold">{destination.name}</h3>
+                <div className="flex items-center text-white/80 text-sm mt-1">
+                  <FaMapMarkerAlt className="mr-1" />
+                  <span>{destination.location}</span>
+                </div>
               </div>
-              <span>120$</span>
             </div>
-
-            <div className="mt-4">
-              <h4 className="text-black text-sm font-bold">Comments:</h4>
-              {tour.comments.length === 0 ? (
-                <p className="text-gray-500">No comments yet</p>
-              ) : (
-                <ul className="text-sm text-gray-700">
-                  {tour.comments.map((comment, index) => (
-                    <li key={index} className="border-b border-gray-200 py-1">
-                      {comment}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="mt-2">
-                <input
-                  type="text"
-                  className="w-full h-10 border border-gray-300 px-2 mb-2"
-                  placeholder="Add a comment..."
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && e.target.value.trim()) {
-                      addComment(tour.id, e.target.value);
-                      e.target.value = "";
-                    }
-                  }}
-                />
-              </div>
+            <div className="p-5">
+              <p className="text-gray-600">{destination.description}</p>
             </div>
           </div>
         ))}
@@ -93,153 +61,187 @@ function RelatedTours() {
 }
 
 function JerusalemDetails() {
-  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
   const dispatch = useDispatch();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const destinations = [
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === israelImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? israelImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const holyLandSites = [
     {
-      name: "Jerusalem",
-      description: "Explore sacred sites like the Western Wall, Dome of the Rock, and Church of the Holy Sepulchre.",
-      price: 150,
-      date: "January 10, 2025"
+      name: "Western Wall (Kotel)",
+      location: "Jerusalem, Israel",
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/e31f819637328b0b24a419f37c97a6b26a48dd194e979979d0ece2a75bb68d20?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28",
+      description: "The holiest site in Judaism, this ancient limestone wall is a remnant of the Second Temple and serves as an open-air synagogue where Jews from around the world come to pray and place written prayers in the cracks between stones."
     },
     {
-      name: "Bethlehem",
-      description: "Visit the Church of the Nativity, marking the birthplace of Jesus.",
-      price: 100,
-      date: "January 10, 2025"
+      name: "Church of the Holy Sepulchre",
+      location: "Jerusalem, Israel",
+      image: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Church_of_the_Holy_Sepulchre_by_Gerd_Eichmann_%28cropped%29.jpg",
+      description: "Revered as the site of Jesus's crucifixion, burial, and resurrection, this church is a major pilgrimage destination for Christians worldwide. It's jointly maintained by several Christian denominations and contains the Tomb of Christ and Golgotha."
     },
     {
-      name: "Nazareth",
-      description: "See the Basilica of the Annunciation, an important Christian pilgrimage site.",
-      price: 120,
-      date: "January 10, 2025"
+      name: "Dome of the Rock",
+      location: "Jerusalem, Israel",
+      image: "https://cdn.britannica.com/93/84693-050-BBB16251/Dome-of-the-Rock-Jerusalem.jpg",
+      description: "An iconic Islamic shrine built on the Temple Mount, featuring a distinctive golden dome and beautiful Islamic calligraphy. Muslims believe it marks the spot where Prophet Muhammad ascended to heaven during his Night Journey."
     },
     {
-      name: "Sea of Galilee",
-      description: "Reflect on biblical stories at this serene location.",
-      price: 90,
-      date: "January 10, 2025"
-    },
-    {
-      name: "Dead Sea",
-      description: "Experience the lowest point on Earth, known for its healing properties.",
-      price: 80,
-      date: "January 10, 2025"
+      name: "Via Dolorosa",
+      location: "Jerusalem, Israel",
+      image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/70/93.jpg",
+      description: "The processional route in Jerusalem's Old City believed to be the path Jesus walked on the way to his crucifixion. Pilgrims follow the 14 Stations of the Cross, ending at the Church of the Holy Sepulchre."
     }
   ];
 
-  const handleBooking = () => {
-    setIsBookingFormOpen(true);
-  };
-
   return (
-    <div className="w-full h-auto bg-stone-50 relative">
-      <div className="relative w-full h-[50vh]">
+    <div className="w-full bg-gray-50 relative">
+      {/* Hero Section */}
+      <div className="relative w-full h-[60vh]">
         <img
           className="w-full h-full object-cover"
           src='https://cdn.builder.io/api/v1/image/assets/TEMP/e31f819637328b0b24a419f37c97a6b26a48dd194e979979d0ece2a75bb68d20?placeholderIfAbsent=true&apiKey=6e51f2aa35694a21b29ab869757ebe28'
-          alt="City Background"
+          alt="Israel Background"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute left-16 top-[70%] transform -translate-y-1/2 text-white text-5xl font-bold">
-          ISRAEL
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
+        <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">ISRAEL</h1>
+            <p className="text-xl text-white/90 max-w-2xl">
+              Journey through the Holy Land, where three major world religions converge
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-4 lg:flex lg:justify-between gap-8 py-8 px-2 lg:ml-12 ">
-        <div className="w-full lg:w-2/3 space-y-8">
-          <div>
-            <div className="text-sky-500 text-2xl font-bold mb-4">
-              ISRAEL (Tel Aviv):
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        {/* Introduction */}
+        <div className="mb-16">
+          <div className="flex items-center mb-6">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">ISRAEL (Tel Aviv)</h2>
+          </div>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            Visit Israel to explore its rich history: Jerusalem's sacred sites, the Dead Sea's unique landscapes, and
+            vibrant cities like Tel Aviv and Haifa await you.
+          </p>
+          
+          <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-sky-500 mb-8">
+            <div className="flex mb-4">
+              <FaQuoteLeft className="text-sky-300 text-3xl mr-4" />
+              <h3 className="text-xl font-bold text-gray-800">Israel</h3>
             </div>
-            <p className="text-black text-lg mb-6">
-              Visit Israel to explore its rich history: Jerusalem's sacred sites, the Dead Sea's unique landscapes, and vibrant cities like Tel Aviv and Haifa await you.
-            </p>
-            <div className="text-sky-500 text-2xl font-bold mb-4">
-              Israel:
-            </div>
-            <p className="text-black text-lg">
-              Embark on a spiritual journey to Israel, the heart of three major world religions. Start in Jerusalem, visiting the Western Wall, the last remnant of the Second Temple, and the Dome of the Rock, an iconic Islamic shrine. Explore the Church of the Holy Sepulchre, believed to be the site of Jesus' crucifixion and resurrection.
-
+            <p className="text-gray-700 leading-relaxed">
+              Embark on a spiritual journey to Israel, the heart of three major world religions. Start in Jerusalem,
+              visiting the Western Wall, the last remnant of the Second Temple, and the Dome of the Rock, an iconic
+              Islamic shrine. Explore the Church of the Holy Sepulchre, believed to be the site of Jesus' crucifixion
+              and resurrection.
+              <br /><br />
               Next, head to Bethlehem, where you can visit the Church of the Nativity, marking the birthplace of Jesus.
-
+              <br /><br />
               Travel to Nazareth to see the Basilica of the Annunciation, an important Christian pilgrimage site.
-
+              <br /><br />
               Don't miss the serene beauty of the Sea of Galilee, where you can reflect on biblical stories.
-
-              Lastly, relax at the Dead Sea, the lowest point on Earth, known for its healing properties. Experience local cuisine and vibrant culture, making your spiritual tour of Israel both enriching and unforgettable.
+              <br /><br />
+              Lastly, relax at the Dead Sea, the lowest point on Earth, known for its healing properties. Experience local 
+              cuisine and vibrant culture, making your spiritual tour of Israel both enriching and unforgettable.
             </p>
           </div>
+        </div>
 
-          <div className="space-y-6">
-            {destinations.map((destination) => (
-              <div key={destination.name} className="bg-white shadow-lg rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-2">{destination.name}</h2>
-                <p className="text-gray-600 mb-4">{destination.description}</p>
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold">Price: ${destination.price}</p>
+        {/* Sacred Sites */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">Sacred Sites in Jerusalem</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {holyLandSites.map((site, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="relative">
+                  <img
+                    className="w-full h-56 object-cover"
+                    src={site.image || "/placeholder.svg"}
+                    alt={site.name}
+                  />
+                  <div className="absolute top-0 right-0 bg-sky-500 text-white px-3 py-1 rounded-bl-lg">
+                    <FaMapMarkerAlt className="inline mr-1" />
+                    {site.location.split(',')[0]}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{site.name}</h3>
+                  <p className="text-gray-600">{site.description}</p>
                 </div>
               </div>
             ))}
           </div>
-
-          <div>
-            <div className="text-black text-xl font-bold mb-4">
-              Recently Visited Trip
-            </div>
-            <img
-              className="w-full h-auto"
-              src={israel}
-              alt="Recently Visited Trip"
-            />
-          </div>
-
-          <RelatedTours />
         </div>
 
-        <div className="w-full lg:w-1/3 h-auto mb-8 lg:mb-0 pb-20 mt-10">
-          <div className="bg-sky-500 text-white flex justify-between items-center px-6 py-4">
-            <div className="text-lg font-semibold">Total Price</div>
-            <div className="text-3xl font-bold">$540</div>
+        {/* Recently Visited */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <div className="h-1 w-10 bg-sky-500 mr-4"></div>
+            <h2 className="text-2xl font-bold text-gray-800">Recently Visited</h2>
           </div>
-
-          <div className="bg-white shadow-lg p-6">
-            <div className="bg-sky-500 text-white text-center py-3 mb-6">
-              <span className="text-base font-semibold">Tour Summary</span>
-            </div>
-            <div className="space-y-4">
-              {destinations.map((destination) => (
-                <div key={destination.name} className="flex justify-between">
-                  <span>{destination.name}</span>
-                  <span>${destination.price}</span>
-                </div>
-              ))}
-              <div className="border-t pt-4 font-bold">
-                <div className="flex justify-between">
-                  <span>Total</span>
-                  <span>$540</span>
-                </div>
-              </div>
-            </div>
-            <button 
-              onClick={handleBooking}
-              className="w-full mt-6 bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50"
+          
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <img
+              className="w-full h-[400px] object-cover"
+              src={israelImages[currentImageIndex] || "/placeholder.svg"}
+              alt="Recently Visited Trip"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+              aria-label="Previous image"
             >
-              Book Now
+              <FaChevronLeft />
             </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition-all"
+              aria-label="Next image"
+            >
+              <FaChevronRight />
+            </button>
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h3 className="text-white text-2xl font-bold mb-2">Jerusalem, Israel</h3>
+              <p className="text-white/90">The ancient city where history and faith intertwine at every corner</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Tours */}
+        <RelatedTours />
+        
+        {/* Decorative element */}
+        <div className="flex justify-center my-16">
+          <div className="flex items-center space-x-2">
+            <div className="h-1 w-3 bg-sky-300 rounded-full"></div>
+            <div className="h-1 w-6 bg-sky-400 rounded-full"></div>
+            <div className="h-1 w-12 bg-sky-500 rounded-full"></div>
+            <div className="h-1 w-6 bg-sky-400 rounded-full"></div>
+            <div className="h-1 w-3 bg-sky-300 rounded-full"></div>
           </div>
         </div>
       </div>
-
-      <BookingForm
-        isOpen={isBookingFormOpen}
-        onClose={() => setIsBookingFormOpen(false)}
-        postId="israel-tour-2023" // Replace with actual post ID
-      />
     </div>
   );
 }
 
 export default JerusalemDetails;
-
