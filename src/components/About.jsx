@@ -5,6 +5,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { FaMapMarkedAlt, FaUsers, FaGlobeAmericas } from "react-icons/fa"
 import { MdTour, MdNaturePeople, MdEco } from "react-icons/md"
+import { Link } from "react-router-dom";
 
 function About() {
   useEffect(() => {
@@ -13,19 +14,19 @@ function About() {
 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "UWIMBABAZI Winnie",
       role: "Founder & CEO",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
     },
     {
-      name: "Michael Chen",
+      name: "UWIMBABAZI Winnie",
       role: "Head of Operations",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
     },
     {
-      name: "Amira Hassan",
+      name: "UWIMBABAZI Winnie",
       role: "Religious Studies Expert",
       image:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
@@ -215,7 +216,7 @@ function About() {
         
       </div>
 
-      {/* Testimonials */}
+      {/* Testimonials
       <div className="w-full bg-gray-100 py-16 mt-10 relative" data-aos="fade-up">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-12 text-sky-600">What Our Pilgrims Say</h2>
@@ -249,20 +250,21 @@ function About() {
             ))}
           </svg>
         </div>
-      </div>
+      </div> */}
 
-      {/* Call to Action */}
-      <div className="w-full bg-white py-16 text-center" data-aos="fade-up">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-sky-600 mb-4">Ready to Begin Your Sacred Journey?</h2>
-          <p className="text-xl mb-8 text-gray-700">
-            Join us on a transformative adventure to the world's most revered spiritual destinations.
-          </p>
-          <button className="bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-sky-700 transition duration-300">
-            Explore Our Tours
-          </button>
-        </div>
-      </div>
+<div className="w-full bg-white py-16 text-center" data-aos="fade-up">
+  <div className="max-w-4xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-sky-600 mb-4">Ready to Begin Your Sacred Journey?</h2>
+    <p className="text-xl mb-8 text-gray-700">
+      Join us on a transformative adventure to the world's most revered spiritual destinations.
+    </p>
+    <Link to="/destiny">
+      <button className="bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-sky-700 transition duration-300">
+        Explore Our Tours
+      </button>
+    </Link>
+  </div>
+</div>
     </div>
   )
 }

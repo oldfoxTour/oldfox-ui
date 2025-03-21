@@ -113,15 +113,7 @@ function Navigation() {
                 <span className="text-sm">+250788726181</span>
               </div>
 
-              <div> | </div>
-              <div className="flex items-center space-x-4">
-                <span className="text-sm">
-                  ACCOUNTs FOR PAY:{" "}
-                  <b>
-                    Bank Account : 12345687654 & Mobile Money : +250788726181
-                  </b>
-                </span>
-              </div>
+              
 
 
             </div>

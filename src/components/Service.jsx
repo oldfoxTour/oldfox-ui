@@ -369,13 +369,13 @@ function Service() {
         ))}
       </div>
 
-      {/* Testimonial */}
+{/*    
       <div className="bg-gray-100 py-16 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-sky-600 text-center mb-12">What Our Clients Say</h2>
           <TestimonialSlider />
         </div>
-        {/* Dandelion seeds floating */}
+       
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -388,7 +388,7 @@ function Service() {
             }}
           ></div>
         ))}
-      </div>
+      </div> */}
 
       {/* Benefits of Our Services */}
       <div className="py-16 bg-gradient-to-r  bg-white shadow-lg">
