@@ -114,7 +114,7 @@ export default function TravelHero() {
               {t("hero.title")}
             </animated.h1>
 
-<div className="space-y-2 max-w-md mx-auto lg:mx-0">
+<div className="space-y-6 max-w-md mx-auto lg:mx-0">
               {[
                 { id: "internationalTour", defaultDesc: "OldFox guides you through global spiritual landmarks" },
                 { id: "religionTour", defaultDesc: "Explore sacred sites with OldFox's expert knowledge" },
@@ -175,7 +175,7 @@ export default function TravelHero() {
               {loading ? (
                 <p className="text-white">Loading...</p>
               ) : (
-                <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
+                <div className="relative aspect-[16/7.6] overflow-hidden rounded-lg">
                   {upcomingTrips && upcomingTrips.length > 0 ? (
                     <div
                       className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
