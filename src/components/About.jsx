@@ -7,6 +7,8 @@ import { FaMapMarkedAlt, FaUsers, FaGlobeAmericas } from "react-icons/fa"
 import { MdTour, MdNaturePeople, MdEco } from "react-icons/md"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next" // Import the translation hook
+import gad from '../IMAGE/gad.jpg'
+import winnie from '../IMAGE/winnie.jpg'
 
 function About() {
   const { t } = useTranslation() // Initialize the translation function
@@ -17,23 +19,16 @@ function About() {
 
   const teamMembers = [
     {
-      name: "UWIMBABAZI Winnie",
+      name: "MUKAWERA Mary Winnie",
       role: t("about.boss"),
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
+      image:"https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
     },
     {
-      name: "UWIMBABAZI Winnie",
+      name: "KAGAME Gad",
       role: t("about.operations"),
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
+      image:gad,
     },
-    {
-      name: "UWIMBABAZI Winnie",
-      role: t("about.expert"),
-      image:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
-    },
+   
   ]
 
   const features = [
@@ -181,26 +176,28 @@ function About() {
       </div>
 
       {/* Team Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 py-16 shadow-lg bg-gray-100" data-aos="fade-up">
-        <div className="flex flex-col items-center mb-12">
-          <div className="h-1 w-16 bg-sky-600 mb-4" />
-          <h2 className="text-3xl font-bold text-sky-600">{t("about.team")}</h2>
-          <div className="h-1 w-16 bg-sky-600 mt-4" />
+<div className="w-full max-w-6xl mx-auto px-4 py-16 shadow-lg bg-gray-100" data-aos="fade-up">
+  <div className="flex flex-col items-center mb-12">
+    <div className="h-1 w-16 bg-sky-600 mb-4" />
+    <h2 className="text-3xl font-bold text-sky-600">{t("about.team")}</h2>
+    <div className="h-1 w-16 bg-sky-600 mt-4" />
+  </div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ml-80 p-6"> {/* Removed ml-80 to center the grid */}
+    {teamMembers.map((member, index) => (
+      <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+        <div className="w-48 h-48 mx-auto mb-4 "> {/* Wrapper div to enforce size */}
+          <img
+            src={member.image || "/placeholder.svg"}
+            alt={member.name}
+            className="w-full h-full object-cover rounded-full "
+          />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
-              <img
-                src={member.image || "/placeholder.svg"}
-                alt={member.name}
-                className="w-48 h-48 object-cover rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-              <p className="text-sky-600">{member.role}</p>
-            </div>
-          ))}
-        </div>
+        <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+        <p className="text-sky-600">{member.role}</p>
       </div>
+    ))}
+  </div>
+</div>
 
       {/* Call to Action */}
       <div className="w-full bg-white py-16 text-center" data-aos="fade-up">

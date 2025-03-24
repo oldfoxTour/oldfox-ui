@@ -61,7 +61,7 @@ function Products() {
     "{t('products.discription')}"
   </div>
 
-  {/* Account Information Card */}
+  {/* Account Information Card
   <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 max-w-sm w-full text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl  animate-fadeIn" >
   <h3 className="text-lg font-semibold text-gray-700 mb-3 transition-colors duration-300 ease-in-out hover:text-sky-500">{t('products.accountinfo')}</h3>
   <div className="text-sm text-gray-600">
@@ -72,7 +72,7 @@ function Products() {
       <span className="font-medium text-xs">{t('products.phone')}:</span> +250788726181
     </p>
   </div>
-</div>
+</div> */}
 
 
 </div>

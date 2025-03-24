@@ -99,7 +99,7 @@ function Navigation() {
           <div className="flex flex-wrap items-center space-x-4 overflow-hidden">
             <div className="flex items-center animate-marquee whitespace-nowrap gap-5">
               <Timer className="h-4 w-4 mr-2" />
-              <span className="text-sm">Open At: 9:00 AM - 6:00 PM</span>
+              <span className="text-sm">Open At: 9:00 AM - 17:00 PM</span>
               <div className="flex items-center space-x-4">
                 <div> | </div>
                 <MapPin className="h-4 w-4 mr-2" />
@@ -119,7 +119,7 @@ function Navigation() {
               <div> | </div>
               <div className="flex items-center space-x-4">
                 <PhoneCallIcon className="h-4 w-4 mr-2" />
-                <span className="text-sm">+250788726181</span>
+                <span className="text-sm">+250788726181 && +250786999154</span> 
               </div>
             </div>
           </div>

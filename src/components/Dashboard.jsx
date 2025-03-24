@@ -4,7 +4,6 @@ import AddNewTrip from "./AddNewTrip";
 import { AuthContext } from "../context/authContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { UsersList } from './users-list';
-import { ProgressCircle } from './progress-circle';
 import { TripPanel } from './trip-panel';
 import logo from '../IMAGE/logo.jpg';
 import { ProductManagement } from './product-management';
@@ -22,12 +21,6 @@ export default function AdminDashboard() {
   const [showSettings, setShowSettings] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  const [recentBookings, setRecentBookings] = useState([
-    { id: 1, name: "New Delhi To Dhaka", type: "Oneway", price: "50$", status: "Pending" },
-    { id: 2, name: "London To Paris", type: "Round Trip", price: "150$", status: "Active" },
-    { id: 3, name: "Tokyo To Seoul", type: "Oneway", price: "80$", status: "Denied" },
-  ]);
-
   useEffect(() => {
     if (!user) {
       getProfile();
@@ -38,20 +31,13 @@ export default function AdminDashboard() {
     try {
       if (!logout || typeof logout !== "function") {
         console.error("Logout function is not defined or not a function");
-        return; // Exit early if logout is invalid
+        return;
       }
-      await logout(); // Call the logout function from AuthContext
+      await logout();
     } catch (error) {
-      console.error("Logout failed:", error.message); // Log any errors for debugging
+      console.error("Logout failed:", error.message);
     }
   };
-
-  const stats = [
-    { title: "Total Booked", value: "$24,590", change: "+12.08%" },
-    { title: "30 Days Revenue", value: "$18,680", change: "+12.08%" },
-    { title: "Total customers", value: "$50,680", change: "+12.08%" },
-    { title: "Tour Packages", value: "$16,590", change: "+12.08%" },
-  ];
 
   const handleAddNewTripClick = () => {
     setIsAddingTrip(true);
@@ -66,14 +52,6 @@ export default function AdminDashboard() {
     if (window.innerWidth <= 768) {
       setIsSidebarOpen(false);
     }
-  };
-
-  const handleStatusChange = (id, newStatus) => {
-    setRecentBookings(prevBookings =>
-      prevBookings.map(booking =>
-        booking.id === id ? { ...booking, status: newStatus } : booking
-      )
-    );
   };
 
   const renderMainContent = () => {
@@ -98,85 +76,28 @@ export default function AdminDashboard() {
     }
 
     return (
-      <>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-4">Performance Overview</h3>
-            <div className="flex justify-around">
-              <ProgressCircle percentage={92} label="Algorithms" color="sky" />
-              <ProgressCircle percentage={83} label="Bookings" color="sky" />
-            </div>
-          </div>
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md p-6"
-            >
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{stat.title}</h3>
-              <p className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</p>
-              <p className="text-sm text-sky-500">{stat.change}</p>
-            </div>
-          ))}
+      <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg p-8 max-w-2xl mx-auto mt-12">
+        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 animate-fade-in">
+          Welcome {user?.name || 'User'} to OldFox Admin Dashboard
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
+          Manage your trips, users, and products with ease
+        </p>
+        <div className="mt-6 flex justify-center space-x-4">
+          <button 
+            onClick={() => handleLinkClick('Trips')}
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
+          >
+            Explore Trips
+          </button>
+          <button 
+            onClick={() => handleLinkClick('Users')}
+            className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300"
+          >
+            View Users
+          </button>
         </div>
-
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-semibold text-gray-800">Recent Bookings</h2>
-            <button className="text-gray-400 hover:text-gray-600">
-              <MoreVertical size={20} />
-            </button>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="text-left text-gray-500 border-b">
-                  <th className="pb-4">Package Name</th>
-                  <th className="pb-4">Type</th>
-                  <th className="pb-4">Price</th>
-                  <th className="pb-4">Status</th>
-                  <th className="pb-4">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentBookings.map((booking) => (
-                  <tr key={booking.id} className="border-b last:border-b-0">
-                    <td className="py-4 flex items-center space-x-3">
-                      <img
-                        src="/placeholder.svg?height=32&width=32"
-                        alt="User"
-                        className="w-8 h-8 rounded-full"
-                      />
-                      <span>{booking.name}</span>
-                    </td>
-                    <td className="py-4">{booking.type}</td>
-                    <td className="py-4">{booking.price}</td>
-                    <td className="py-4">
-                      <select
-                        value={booking.status}
-                        onChange={(e) => handleStatusChange(booking.id, e.target.value)}
-                        className={`px-3 py-1 rounded-full text-sm ${
-                          booking.status === 'Active' ? 'bg-sky-100 text-sky-800' :
-                          booking.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-red-100 text-red-800'
-                        }`}
-                      >
-                        <option value="Pending">Pending</option>
-                        <option value="Active">Active</option>
-                        <option value="Denied">Denied</option>
-                      </select>
-                    </td>
-                    <td className="py-4">
-                      <button className="text-gray-400 hover:text-gray-600">
-                        <MoreVertical size={20} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </>
+      </div>
     );
   };
 
@@ -191,27 +112,29 @@ export default function AdminDashboard() {
     <div className="min-h-screen">
       <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
         {/* Sidebar */}
-        <aside className={`w-64 bg-[#0da5ea] text-white transform transition-transform duration-300 ease-in-out ${
+        <aside className={`w-64 bg-gradient-to-b from-blue-600 to-indigo-600 text-white transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } fixed md:relative z-50 md:translate-x-0`}>
+        } fixed md:relative z-50 md:translate-x-0 shadow-xl`}>
           <div className="p-4">
-            <div className="flex items-center space-x-2 mb-6">
-              <img src={logo} alt="Logo" className="h-8 w-8" />
-              <span className="text-xl font-bold">Smart Admin</span>
+            <div className="flex items-center space-x-2 mb-8">
+              <img src={logo} alt="Logo" className="h-10 w-10 rounded-full shadow-md" />
+              <span className="text-2xl font-extrabold tracking-tight">OldFox</span>
             </div>
             
-            <nav className="space-y-2">
+            <nav className="space-y-3">
               {sidebarItems.map(item => (
                 <a
                   key={item.value}
                   href="#"
                   onClick={() => handleLinkClick(item.value)}
-                  className={`flex items-center space-x-2 p-2 rounded-lg transition-colors ${
-                    activeLink === item.value ? 'bg-white/10' : 'hover:bg-white/5'
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
+                    activeLink === item.value 
+                      ? 'bg-white/20 shadow-md' 
+                      : 'hover:bg-white/10 hover:shadow-md'
                   }`}
                 >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
+                  <item.icon size={22} className="text-white/90" />
+                  <span className="font-medium">{item.label}</span>
                 </a>
               ))}
             </nav>
@@ -220,10 +143,10 @@ export default function AdminDashboard() {
           <div className="absolute bottom-0 w-64 p-4">
             <button
               onClick={handleLogout}
-              className="flex items-center space-x-2 w-full p-2 rounded-lg hover:bg-white/5"
+              className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-white/10 transition-all duration-200"
             >
-              <LogOut size={20} />
-              <span>Log Out</span>
+              <LogOut size={22} className="text-white/90" />
+              <span className="font-medium">Log Out</span>
             </button>
           </div>
         </aside>
@@ -251,9 +174,9 @@ export default function AdminDashboard() {
                     setShowNotifications(false);
                     setActiveLink('');
                   }}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
                 >
-                  <Settings size={20} />
+                  <Settings size={20} className="text-gray-600 dark:text-gray-300" />
                 </button>
                 
                 <button
@@ -262,11 +185,11 @@ export default function AdminDashboard() {
                     setShowSettings(false);
                     setActiveLink('');
                   }}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 relative"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 relative transition-all duration-200"
                 >
-                  <Bell size={20} />
+                  <Bell size={20} className="text-gray-600 dark:text-gray-300" />
                   {notificationCount > 0 && (
-                    <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                    <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs shadow-md">
                       {notificationCount}
                     </span>
                   )}
@@ -276,9 +199,9 @@ export default function AdminDashboard() {
                   <img
                     src={user?.profile?.url || "/placeholder.svg?height=32&width=32"}
                     alt="User Avatar"
-                    className="h-8 w-8 rounded-full"
+                    className="h-9 w-9 rounded-full shadow-md"
                   />
-                  <span className="font-medium dark:text-white">
+                  <span className="font-semibold text-gray-800 dark:text-white">
                     {user?.name || 'User'}
                   </span>
                 </div>
