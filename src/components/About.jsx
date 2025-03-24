@@ -21,7 +21,7 @@ function About() {
     {
       name: "MUKAWERA Mary Winnie",
       role: t("about.boss"),
-      image:"https://cdn.builder.io/api/v1/image/assets/TEMP/4870b734b0f9cf58ac339c1438f2ecdaef768164e4946c48bc073492c23539d7?placeholderIfAbsent=true&apiKey=ad4b702f1041452291688c39b1990497&width=400",
+      image:winnie,
     },
     {
       name: "KAGAME Gad",
