@@ -175,21 +175,21 @@ function About() {
         </div>
       </div>
 
-      {/* Team Section */}
+{/* Team Section */}
 <div className="w-full max-w-6xl mx-auto px-4 py-16 shadow-lg bg-gray-100" data-aos="fade-up">
   <div className="flex flex-col items-center mb-12">
     <div className="h-1 w-16 bg-sky-600 mb-4" />
     <h2 className="text-3xl font-bold text-sky-600">{t("about.team")}</h2>
     <div className="h-1 w-16 bg-sky-600 mt-4" />
   </div>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ml-80 p-6"> {/* Removed ml-80 to center the grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 md:ml-80 lg:ml-80 xl:ml-80">
     {teamMembers.map((member, index) => (
       <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
-        <div className="w-48 h-48 mx-auto mb-4 "> {/* Wrapper div to enforce size */}
+        <div className="w-48 h-48 mx-auto mb-4">
           <img
             src={member.image || "/placeholder.svg"}
             alt={member.name}
-            className="w-full h-full object-cover rounded-full "
+            className="w-full h-full object-cover rounded-full"
           />
         </div>
         <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
